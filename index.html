@@ -152,6 +152,15 @@
                             <span>Results</span>
                           </a>
                         </span>
+
+                        <span class="link-block">
+                          <a href="appendix_materials/" class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                              <i class="fas fa-box"></i>
+                            </span>
+                            <span>Appendix Materials</span>
+                          </a>
+                        </span>
                       </p>
             </div>
           </div>
@@ -426,19 +435,11 @@
         
         <!-- Figures 1 & 2 - Side by Side -->
         <div class="columns is-centered">
-          <div class="column is-6">
+          <div class="column is-full">
             <figure class="image">
-              <img src="static/images/ahat_levels.png" alt="Results on In-distribution Benchmark" loading="lazy" style="max-width: 100%; height: auto;"/>
+              <img src="static/images/comparison_prompting_based_beslines.png" alt="Results on In-distribution Benchmark" loading="lazy" style="max-width: 100%; height: auto;"/>
               <figcaption class="has-text-centered" style="margin-top: 0.5rem; font-style: italic;">
-                Figure 1: Performance comparison on In-distribution Benchmark under varying complexity.
-              </figcaption>
-            </figure>
-          </div>
-          <div class="column is-6">
-            <figure class="image">
-              <img src="static/images/methods_by_benchmark.png" alt="Results on Out-of-distribution benchmarks" loading="lazy" style="max-width: 100%; height: auto;"/>
-              <figcaption class="has-text-centered" style="margin-top: 0.5rem; font-style: italic;">
-                Figure 2: Performance comparison across Out-of-distribution benchmarks.
+                Figure 1: Performance comparison with prompting-based baselines.
               </figcaption>
             </figure>
           </div>
@@ -453,11 +454,11 @@
         
         <!-- Figures 3 & 4 - Side by Side -->
         <div class="columns is-centered">
-          <div class="column is-6">
+          <div class="column is-full">
             <figure class="image">
-              <img src="static/images/ahat_ablation.png" alt="Ablation study results" loading="lazy" style="max-width: 100%; height: auto;"/>
+              <img src="static/images/comparison_learning_baselines.png" alt="Ablation study results" loading="lazy" style="max-width: 100%; height: auto;"/>
               <figcaption class="has-text-centered" style="margin-top: 0.5rem; font-style: italic;">
-                Figure 3: Ablation study results showing the contribution of TGPO.
+                Figure 2: Performance comparison with learning-based baselines as a ablation study.
               </figcaption>
             </figure>
           </div>
@@ -523,8 +524,6 @@
   </div>
 </section>
 <!-- End experimental results -->
-
-
 
   <script>
     // Simulator data management

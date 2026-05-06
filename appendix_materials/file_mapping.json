@@ -1,0 +1,7 @@
+{
+  "planning_domain.pddl": "pddl_domain/planning_domain.pddl",
+  "test_domain.txt": "pddl_domain/test_domain.txt",
+  "easy_task_examples.md": "task_examples/easy_task_examples.md",
+  "test_example.txt": "task_examples/test_example.txt",
+  "training_system_prompt.md": "prompts/training_system_prompt.md"
+}
