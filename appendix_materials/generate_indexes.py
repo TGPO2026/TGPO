@@ -193,7 +193,7 @@ def ensure_indexes(base_dir):
             create_index_html(index_path, dir_path.name)
 
 
-def build_rows(dir_path):
+def build_rows(dir_path, base_dir):
     rows = []
 
     for item_path in sorted(dir_path.iterdir(), key=lambda p: p.name):
@@ -201,6 +201,10 @@ def build_rows(dir_path):
             continue
 
         if item_path.name == "index.html":
+            continue
+
+        # 只在 appendix_materials/ 顶层 index 中隐藏这两个文件
+        if dir_path == base_dir and item_path.name in {"generate_indexes.py", "file_mapping.json"}:
             continue
 
         item = item_path.name
@@ -241,9 +245,9 @@ def build_rows(dir_path):
     return "\n" + "\n".join(rows) + "\n    "
 
 
-def refresh_index(index_path, dir_path):
+def refresh_index(index_path, dir_path, base_dir):
     content = index_path.read_text(encoding="utf-8")
-    new_inner = build_rows(dir_path)
+    new_inner = build_rows(dir_path, base_dir)
 
     pattern = re.compile(
         r'(<div class="dirlist">)(.*?)(</div>\s*<div class="note">)',
@@ -269,7 +273,7 @@ def update_all_indexes(base_dir):
         if not index_path.exists():
             continue
 
-        refresh_index(index_path, dir_path)
+        refresh_index(index_path, dir_path, base_dir)
 
 
 def build_file_mapping(base_dir):
