@@ -1613,7 +1613,7 @@
 					"(navigate agent_0 cup_23 table_30)",
 					"(place_next_to_surface agent_0 cup_23 plate_22 table_30)"
 				],
-				"video_path": "static/videos/habitat_demos/host_an_elegant_dinner_this_evening.mp4"
+				"video_path": "static/videos/habitat_demos/Host_an_elegant_dinner_this_evening.mp4"
 			},
 			{
 				"instruction": "Plan and serve a complete evening meal",
@@ -1647,7 +1647,7 @@
 					"(navigate agent_0 cup_23 table_30)",
 					"(place_next_to_surface agent_0 cup_23 glass_50 table_30)"
 				],
-				"video_path": "static/videos/habitat_demos/plan_and_serve_a_complete_evening_meal.mp4"
+				"video_path": "static/videos/habitat_demos/Plan_and_serve_a_complete_evening_meal.mp4"
 			},
 			{
 				"instruction": "Prepare the home for guests tonight.",
@@ -1674,7 +1674,7 @@
 					"(navigate agent_0 glass_50 table_32)",
 					"(place_next_to_surface agent_0 glass_50 fork_25 table_32)"
 				],
-				"video_path": "static/videos/habitat_demos/prepare_the_home_for_guests_tonight.mp4"
+				"video_path": "static/videos/habitat_demos/Prepare_the_home_for_guests_tonight.mp4"
 			},
 			{
 				"instruction": "Prepare tomorrow\u2019s morning routine station.",
@@ -1700,7 +1700,7 @@
 					"(navigate agent_0 phone_14 table_31)",
 					"(place_next_to_surface agent_0 phone_14 keychain_13 table_31)"
 				],
-				"video_path": "static/videos/habitat_demos/prepare_tomorrows_morning_routine_station.mp4"
+				"video_path": "static/videos/habitat_demos/Prepare_tomorrows_morning_routine_station.mp4"
 			},
 			{
 				"instruction": "Prepare and serve a light evening refreshment.",
@@ -1720,7 +1720,7 @@
 					"(navigate agent_0 glass_51 table_30)",
 					"(place_on_surface agent_0 glass_51 table_30)"
 				],
-				"video_path": "static/videos/habitat_demos/prepare_and_serve_a_light_evening_refreshment.mp4"
+				"video_path": "static/videos/habitat_demos/Prepare_and_serve_a_light_evening_refreshment.mp4"
 			},
 			{
 				"instruction": "Prepare for an early start tomorrow",
@@ -1746,7 +1746,7 @@
 					"(navigate agent_0 keychain_13 table_31)",
 					"(place_next_to_surface agent_0 keychain_13 watch_5 table_31)"
 				],
-				"video_path": "static/videos/habitat_demos/prepare_for_an_early_start_tomorrow.mp4"
+				"video_path": "static/videos/habitat_demos/Prepare_for_an_early_start_tomorrow.mp4"
 			},
 			{
 				"instruction": "Welcome a guest with refreshments and entertainment",
@@ -1775,7 +1775,7 @@
 					"(navigate agent_0 action_figure_8 table_32)",
 					"(place_next_to_surface agent_0 action_figure_8 cup_23 table_32)"
 				],
-				"video_path": "static/videos/habitat_demos/welcome_a_guest_with_refreshments_and_entertainment.mp4"
+				"video_path": "static/videos/habitat_demos/Welcome_a_guest_with_refreshments_and_entertainment.mp4"
 			}
 		]
 	},
