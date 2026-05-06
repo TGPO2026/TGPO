@@ -1,0 +1,1823 @@
+[
+	{
+		"simulator": "Habitat",
+		"scene_graph": {
+			"rooms": [
+				{
+					"name": "bathroom_1",
+					"states": {
+						"is_clean": true,
+						"require_floor_cleaner": true
+					}
+				},
+				{
+					"name": "bathroom_2",
+					"states": {
+						"is_clean": true,
+						"require_floor_cleaner": true
+					}
+				},
+				{
+					"name": "bedroom_1",
+					"states": {
+						"is_clean": true,
+						"require_floor_cleaner": true
+					}
+				},
+				{
+					"name": "bedroom_2",
+					"states": {
+						"is_clean": true,
+						"require_floor_cleaner": true
+					}
+				},
+				{
+					"name": "closet_1",
+					"states": {
+						"is_clean": true,
+						"require_floor_cleaner": true
+					}
+				},
+				{
+					"name": "closet_2",
+					"states": {
+						"is_clean": true,
+						"require_floor_cleaner": true
+					}
+				},
+				{
+					"name": "dining_room_1",
+					"states": {
+						"is_clean": true,
+						"require_floor_cleaner": true
+					}
+				},
+				{
+					"name": "kitchen_1",
+					"states": {
+						"is_clean": true,
+						"require_floor_cleaner": true
+					}
+				},
+				{
+					"name": "living_room_1",
+					"states": {
+						"is_clean": true,
+						"require_floor_cleaner": true
+					}
+				},
+				{
+					"name": "office_1",
+					"states": {
+						"is_clean": true,
+						"require_floor_cleaner": true
+					}
+				},
+				{
+					"name": "toilet_1",
+					"states": {
+						"is_clean": true,
+						"require_floor_cleaner": true
+					}
+				},
+				{
+					"name": "outdoor_room_1",
+					"states": {}
+				}
+			],
+			"furnitures": [
+				{
+					"name": "toilet_12",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": true,
+						"is_powerable": true
+					},
+					"components": []
+				},
+				{
+					"name": "shower_15",
+					"states": {
+						"is_clean": true,
+						"is_filled": false
+					},
+					"components": [
+						"faucet"
+					]
+				},
+				{
+					"name": "washer_dryer_13",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": true,
+						"is_powerable": true
+					},
+					"components": []
+				},
+				{
+					"name": "washer_dryer_20",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": true,
+						"is_powerable": true
+					},
+					"components": []
+				},
+				{
+					"name": "bed_33",
+					"states": {
+						"is_clean": false
+					},
+					"components": []
+				},
+				{
+					"name": "chair_22",
+					"states": {
+						"is_clean": false
+					},
+					"components": []
+				},
+				{
+					"name": "chest_of_drawers_46",
+					"states": {
+						"is_clean": true,
+						"can_be_opened": true,
+						"is_open": false
+					},
+					"components": []
+				},
+				{
+					"name": "counter_45",
+					"states": {
+						"is_clean": true,
+						"can_be_opened": true,
+						"is_open": false
+					},
+					"components": []
+				},
+				{
+					"name": "shelves_16",
+					"states": {
+						"is_clean": false
+					},
+					"components": []
+				},
+				{
+					"name": "table_31",
+					"states": {
+						"is_clean": false
+					},
+					"components": []
+				},
+				{
+					"name": "bed_23",
+					"states": {
+						"is_clean": false
+					},
+					"components": []
+				},
+				{
+					"name": "cabinet_43",
+					"states": {
+						"is_clean": true,
+						"can_be_opened": true,
+						"is_open": false
+					},
+					"components": []
+				},
+				{
+					"name": "chest_of_drawers_35",
+					"states": {
+						"is_clean": true,
+						"can_be_opened": true,
+						"is_open": false
+					},
+					"components": []
+				},
+				{
+					"name": "chair_26",
+					"states": {
+						"is_clean": false
+					},
+					"components": []
+				},
+				{
+					"name": "chair_27",
+					"states": {
+						"is_clean": false
+					},
+					"components": []
+				},
+				{
+					"name": "chair_28",
+					"states": {
+						"is_clean": false
+					},
+					"components": []
+				},
+				{
+					"name": "chair_29",
+					"states": {
+						"is_clean": false
+					},
+					"components": []
+				},
+				{
+					"name": "table_30",
+					"states": {
+						"is_clean": false
+					},
+					"components": []
+				},
+				{
+					"name": "cabinet_37",
+					"states": {
+						"is_clean": true,
+						"can_be_opened": true,
+						"is_open": false
+					},
+					"components": []
+				},
+				{
+					"name": "cabinet_40",
+					"states": {
+						"is_clean": true,
+						"can_be_opened": true,
+						"is_open": false
+					},
+					"components": []
+				},
+				{
+					"name": "cabinet_41",
+					"states": {
+						"is_clean": true,
+						"can_be_opened": true,
+						"is_open": false
+					},
+					"components": []
+				},
+				{
+					"name": "coffee_maker_25",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": true,
+						"is_powerable": true,
+						"is_filled": true,
+						"can_only_place_one_object": true
+					},
+					"components": []
+				},
+				{
+					"name": "counter_34",
+					"states": {
+						"is_clean": true,
+						"can_be_opened": true,
+						"is_open": false
+					},
+					"components": []
+				},
+				{
+					"name": "door_49",
+					"states": {
+						"is_clean": false
+					},
+					"components": []
+				},
+				{
+					"name": "electric_stove_103",
+					"states": {
+						"is_clean": false
+					},
+					"components": []
+				},
+				{
+					"name": "fridge_44",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": true,
+						"is_powerable": true,
+						"can_be_opened": true
+					},
+					"components": []
+				},
+				{
+					"name": "sink_101",
+					"states": {
+						"is_clean": true,
+						"has_faucet": true,
+						"is_powerable": true
+					},
+					"components": [
+						"faucet"
+					]
+				},
+				{
+					"name": "stool_17",
+					"states": {
+						"is_clean": false
+					},
+					"components": []
+				},
+				{
+					"name": "stool_18",
+					"states": {
+						"is_clean": false
+					},
+					"components": []
+				},
+				{
+					"name": "couch_24",
+					"states": {
+						"is_clean": false
+					},
+					"components": []
+				},
+				{
+					"name": "stand_19",
+					"states": {
+						"is_clean": false
+					},
+					"components": []
+				},
+				{
+					"name": "table_32",
+					"states": {
+						"is_clean": false
+					},
+					"components": []
+				},
+				{
+					"name": "tv_48",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": true,
+						"is_powerable": true
+					},
+					"components": []
+				},
+				{
+					"name": "chair_21",
+					"states": {
+						"is_clean": false
+					},
+					"components": []
+				},
+				{
+					"name": "table_14",
+					"states": {
+						"is_clean": false
+					},
+					"components": []
+				},
+				{
+					"name": "toilet_11",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": true,
+						"is_powerable": true
+					},
+					"components": []
+				},
+				{
+					"name": "express_area_99",
+					"states": {},
+					"components": []
+				},
+				{
+					"name": "trash_bin_100",
+					"states": {},
+					"components": []
+				}
+			],
+			"objects": [
+				{
+					"name": "soap_dispenser_1",
+					"states": {
+						"is_clean": true,
+						"is_filled": false,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "watch_5",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "hand_towel_4",
+					"states": {
+						"is_clean": true,
+						"is_cleaning_tool": true,
+						"requires_water_to_clean": true
+					},
+					"placement": "on"
+				},
+				{
+					"name": "spray_bottle_2",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": true,
+						"is_filled": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "clothing_64",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "clothing_6",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "picture_frame_54",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "book_55",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "alarm_clock_7",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": true,
+						"is_powerable": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "in"
+				},
+				{
+					"name": "trashcan_57",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": true
+					},
+					"placement": "on"
+				},
+				{
+					"name": "action_figure_8",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": true,
+						"is_powerable": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "action_figure_9",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": true,
+						"is_powerable": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "toy_construction_set_47",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "toy_fire_truck_46",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": false,
+						"is_powerable": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "toy_construction_set_10",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "toy_construction_set_11",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "hard_drive_60",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": true,
+						"is_powerable": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "laptop_61",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": false,
+						"is_powerable": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "keychain_13",
+					"states": {
+						"is_clean": false,
+						"requires_water_to_clean": true
+					},
+					"placement": "on"
+				},
+				{
+					"name": "phone_14",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": false,
+						"is_powerable": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "scissors_15",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": true
+					},
+					"placement": "on"
+				},
+				{
+					"name": "book_39",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "in"
+				},
+				{
+					"name": "plate_59",
+					"states": {
+						"is_clean": false,
+						"requires_water_to_clean": true,
+						"is_heated": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "can_40",
+					"states": {
+						"is_clean": false,
+						"requires_water_to_clean": true
+					},
+					"placement": "on"
+				},
+				{
+					"name": "sponge_3",
+					"states": {
+						"is_clean": true,
+						"is_cleaning_tool": true,
+						"requires_water_to_clean": true
+					},
+					"placement": "on"
+				},
+				{
+					"name": "spoon_41",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": true,
+						"is_filled": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "spoon_42",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": true,
+						"is_filled": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "spoon_43",
+					"states": {
+						"is_clean": false,
+						"requires_water_to_clean": true,
+						"is_filled": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "kettle_49",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": true,
+						"requires_water_to_clean": true,
+						"is_filled": false,
+						"is_heating_device": true,
+						"is_powerable": true,
+						"is_heater": true
+					},
+					"placement": "on"
+				},
+				{
+					"name": "toaster_48",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": true,
+						"is_heating_device": true,
+						"is_powerable": true,
+						"requires_water_to_clean": false,
+						"is_heater": true
+					},
+					"placement": "on"
+				},
+				{
+					"name": "tea_canister_52",
+					"states": {
+						"requires_water_to_clean": false
+					},
+					"placement": "in"
+				},
+				{
+					"name": "glass_50",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": true,
+						"is_filled": false
+					},
+					"placement": "in"
+				},
+				{
+					"name": "glass_51",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": true,
+						"is_filled": false
+					},
+					"placement": "in"
+				},
+				{
+					"name": "cup_23",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": true,
+						"is_filled": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "cup_24",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": true,
+						"is_filled": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "cup_58",
+					"states": {
+						"is_clean": false,
+						"requires_water_to_clean": true,
+						"is_filled": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "fork_25",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": true
+					},
+					"placement": "in"
+				},
+				{
+					"name": "fork_26",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": true
+					},
+					"placement": "in"
+				},
+				{
+					"name": "fork_27",
+					"states": {
+						"is_clean": false,
+						"requires_water_to_clean": true
+					},
+					"placement": "in"
+				},
+				{
+					"name": "pot_53",
+					"states": {
+						"is_clean": false,
+						"requires_water_to_clean": true,
+						"is_filled": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "plate_22",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": true,
+						"is_heated": false
+					},
+					"placement": "in"
+				},
+				{
+					"name": "plate_65",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": true,
+						"is_heated": false
+					},
+					"placement": "in"
+				},
+				{
+					"name": "jug_21",
+					"states": {
+						"is_clean": false,
+						"requires_water_to_clean": true,
+						"is_filled": false,
+						"is_heated": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "milk_63",
+					"states": {
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "rice_cooker_20",
+					"states": {
+						"is_powered_on": false,
+						"is_heating_device": true,
+						"is_powerable": true,
+						"requires_water_to_clean": false,
+						"is_heater": true
+					},
+					"placement": "on"
+				},
+				{
+					"name": "apple_17",
+					"states": {
+						"is_clean": false,
+						"requires_water_to_clean": true
+					},
+					"placement": "in"
+				},
+				{
+					"name": "coke_62",
+					"states": {
+						"requires_water_to_clean": false,
+						"is_filled": true
+					},
+					"placement": "in"
+				},
+				{
+					"name": "egg_18",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": true
+					},
+					"placement": "in"
+				},
+				{
+					"name": "earphone_33",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": true,
+						"is_powerable": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "clothing_32",
+					"states": {
+						"is_clean": false,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "phone_31",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": true,
+						"is_powerable": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "cushion_29",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "cushion_30",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "trashcan_56",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": true
+					},
+					"placement": "on"
+				},
+				{
+					"name": "vaccum_cleaner_28",
+					"states": {
+						"is_cleaning_tool": true,
+						"requires_water_to_clean": false,
+						"is_floor_cleaner": true
+					},
+					"placement": "on"
+				},
+				{
+					"name": "multiport_hub_36",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": true,
+						"is_powerable": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "speaker_12",
+					"states": {
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "battery_charger_35",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": true,
+						"is_powerable": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "bread_34",
+					"states": {
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "book_0",
+					"states": {
+						"is_clean": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "laptop_38",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": true,
+						"is_powerable": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "plate_37",
+					"states": {
+						"is_clean": false,
+						"requires_water_to_clean": true,
+						"is_heated": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "cellphone_16",
+					"states": {
+						"is_powered_on": false,
+						"is_clean": true,
+						"is_powerable": true,
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "toliet_paper_19",
+					"states": {
+						"requires_water_to_clean": false
+					},
+					"placement": "on"
+				},
+				{
+					"name": "package_102",
+					"states": {},
+					"placement": "on"
+				}
+			],
+			"agent": [
+				{
+					"name": "agent_0",
+					"location": "kitchen_1",
+					"object_in_hand": null
+				}
+			],
+			"person": [
+				{
+					"name": "person_50",
+					"location": "bedroom_1"
+				}
+			],
+			"links": [
+				[
+					"bathroom_1",
+					"toilet_12",
+					"in"
+				],
+				[
+					"bathroom_2",
+					"shower_15",
+					"in"
+				],
+				[
+					"shower_15",
+					"soap_dispenser_1",
+					"on"
+				],
+				[
+					"shower_15",
+					"watch_5",
+					"on"
+				],
+				[
+					"bathroom_2",
+					"washer_dryer_13",
+					"in"
+				],
+				[
+					"washer_dryer_13",
+					"hand_towel_4",
+					"on"
+				],
+				[
+					"washer_dryer_13",
+					"spray_bottle_2",
+					"on"
+				],
+				[
+					"bathroom_2",
+					"washer_dryer_20",
+					"in"
+				],
+				[
+					"washer_dryer_20",
+					"clothing_64",
+					"on"
+				],
+				[
+					"bedroom_1",
+					"bed_33",
+					"in"
+				],
+				[
+					"bed_33",
+					"clothing_6",
+					"on"
+				],
+				[
+					"bedroom_1",
+					"chair_22",
+					"in"
+				],
+				[
+					"bedroom_1",
+					"chest_of_drawers_46",
+					"in"
+				],
+				[
+					"chest_of_drawers_46",
+					"picture_frame_54",
+					"on"
+				],
+				[
+					"chest_of_drawers_46",
+					"book_55",
+					"on"
+				],
+				[
+					"bedroom_1",
+					"counter_45",
+					"in"
+				],
+				[
+					"counter_45",
+					"alarm_clock_7",
+					"in"
+				],
+				[
+					"counter_45",
+					"trashcan_57",
+					"on"
+				],
+				[
+					"bedroom_1",
+					"person_50",
+					"in"
+				],
+				[
+					"bedroom_1",
+					"shelves_16",
+					"in"
+				],
+				[
+					"shelves_16",
+					"action_figure_8",
+					"on"
+				],
+				[
+					"shelves_16",
+					"action_figure_9",
+					"on"
+				],
+				[
+					"shelves_16",
+					"toy_construction_set_47",
+					"on"
+				],
+				[
+					"shelves_16",
+					"toy_fire_truck_46",
+					"on"
+				],
+				[
+					"shelves_16",
+					"toy_construction_set_10",
+					"on"
+				],
+				[
+					"shelves_16",
+					"toy_construction_set_11",
+					"on"
+				],
+				[
+					"bedroom_1",
+					"table_31",
+					"in"
+				],
+				[
+					"table_31",
+					"hard_drive_60",
+					"on"
+				],
+				[
+					"table_31",
+					"laptop_61",
+					"on"
+				],
+				[
+					"bedroom_2",
+					"bed_23",
+					"in"
+				],
+				[
+					"bed_23",
+					"keychain_13",
+					"on"
+				],
+				[
+					"bed_23",
+					"phone_14",
+					"on"
+				],
+				[
+					"bedroom_2",
+					"cabinet_43",
+					"in"
+				],
+				[
+					"bedroom_2",
+					"chest_of_drawers_35",
+					"in"
+				],
+				[
+					"chest_of_drawers_35",
+					"scissors_15",
+					"on"
+				],
+				[
+					"chest_of_drawers_35",
+					"book_39",
+					"in"
+				],
+				[
+					"dining_room_1",
+					"chair_26",
+					"in"
+				],
+				[
+					"dining_room_1",
+					"chair_27",
+					"in"
+				],
+				[
+					"dining_room_1",
+					"chair_28",
+					"in"
+				],
+				[
+					"dining_room_1",
+					"chair_29",
+					"in"
+				],
+				[
+					"dining_room_1",
+					"table_30",
+					"in"
+				],
+				[
+					"table_30",
+					"plate_59",
+					"on"
+				],
+				[
+					"kitchen_1",
+					"agent_0",
+					"in"
+				],
+				[
+					"kitchen_1",
+					"cabinet_37",
+					"in"
+				],
+				[
+					"cabinet_37",
+					"can_40",
+					"on"
+				],
+				[
+					"cabinet_37",
+					"sponge_3",
+					"on"
+				],
+				[
+					"cabinet_37",
+					"spoon_41",
+					"on"
+				],
+				[
+					"cabinet_37",
+					"spoon_42",
+					"on"
+				],
+				[
+					"cabinet_37",
+					"spoon_43",
+					"on"
+				],
+				[
+					"cabinet_37",
+					"kettle_49",
+					"on"
+				],
+				[
+					"cabinet_37",
+					"toaster_48",
+					"on"
+				],
+				[
+					"cabinet_37",
+					"tea_canister_52",
+					"in"
+				],
+				[
+					"cabinet_37",
+					"glass_50",
+					"in"
+				],
+				[
+					"cabinet_37",
+					"glass_51",
+					"in"
+				],
+				[
+					"kitchen_1",
+					"cabinet_40",
+					"in"
+				],
+				[
+					"cabinet_40",
+					"cup_23",
+					"on"
+				],
+				[
+					"cabinet_40",
+					"cup_24",
+					"on"
+				],
+				[
+					"cabinet_40",
+					"cup_58",
+					"on"
+				],
+				[
+					"cabinet_40",
+					"fork_25",
+					"in"
+				],
+				[
+					"cabinet_40",
+					"fork_26",
+					"in"
+				],
+				[
+					"cabinet_40",
+					"fork_27",
+					"in"
+				],
+				[
+					"kitchen_1",
+					"cabinet_41",
+					"in"
+				],
+				[
+					"cabinet_41",
+					"pot_53",
+					"on"
+				],
+				[
+					"cabinet_41",
+					"plate_22",
+					"in"
+				],
+				[
+					"cabinet_41",
+					"plate_65",
+					"in"
+				],
+				[
+					"kitchen_1",
+					"coffee_maker_25",
+					"in"
+				],
+				[
+					"kitchen_1",
+					"counter_34",
+					"in"
+				],
+				[
+					"counter_34",
+					"jug_21",
+					"on"
+				],
+				[
+					"counter_34",
+					"milk_63",
+					"on"
+				],
+				[
+					"counter_34",
+					"rice_cooker_20",
+					"on"
+				],
+				[
+					"kitchen_1",
+					"door_49",
+					"in"
+				],
+				[
+					"kitchen_1",
+					"electric_stove_103",
+					"in"
+				],
+				[
+					"kitchen_1",
+					"fridge_44",
+					"in"
+				],
+				[
+					"fridge_44",
+					"apple_17",
+					"in"
+				],
+				[
+					"fridge_44",
+					"coke_62",
+					"in"
+				],
+				[
+					"fridge_44",
+					"egg_18",
+					"in"
+				],
+				[
+					"kitchen_1",
+					"sink_101",
+					"in"
+				],
+				[
+					"kitchen_1",
+					"stool_17",
+					"in"
+				],
+				[
+					"kitchen_1",
+					"stool_18",
+					"in"
+				],
+				[
+					"living_room_1",
+					"couch_24",
+					"in"
+				],
+				[
+					"couch_24",
+					"earphone_33",
+					"on"
+				],
+				[
+					"couch_24",
+					"clothing_32",
+					"on"
+				],
+				[
+					"couch_24",
+					"phone_31",
+					"on"
+				],
+				[
+					"couch_24",
+					"cushion_29",
+					"on"
+				],
+				[
+					"couch_24",
+					"cushion_30",
+					"on"
+				],
+				[
+					"couch_24",
+					"trashcan_56",
+					"on"
+				],
+				[
+					"couch_24",
+					"vaccum_cleaner_28",
+					"on"
+				],
+				[
+					"living_room_1",
+					"stand_19",
+					"in"
+				],
+				[
+					"stand_19",
+					"multiport_hub_36",
+					"on"
+				],
+				[
+					"stand_19",
+					"speaker_12",
+					"on"
+				],
+				[
+					"stand_19",
+					"battery_charger_35",
+					"on"
+				],
+				[
+					"living_room_1",
+					"table_32",
+					"in"
+				],
+				[
+					"table_32",
+					"bread_34",
+					"on"
+				],
+				[
+					"living_room_1",
+					"tv_48",
+					"in"
+				],
+				[
+					"office_1",
+					"chair_21",
+					"in"
+				],
+				[
+					"office_1",
+					"table_14",
+					"in"
+				],
+				[
+					"table_14",
+					"book_0",
+					"on"
+				],
+				[
+					"table_14",
+					"laptop_38",
+					"on"
+				],
+				[
+					"table_14",
+					"plate_37",
+					"on"
+				],
+				[
+					"toilet_1",
+					"toilet_11",
+					"in"
+				],
+				[
+					"toilet_11",
+					"cellphone_16",
+					"on"
+				],
+				[
+					"toilet_11",
+					"toliet_paper_19",
+					"on"
+				],
+				[
+					"outdoor_room_1",
+					"express_area_99",
+					"in"
+				],
+				[
+					"outdoor_room_1",
+					"trash_bin_100",
+					"in"
+				],
+				[
+					"express_area_99",
+					"package_102",
+					"on"
+				]
+			]
+		},
+		"data_items": [
+			{
+				"instruction": "Clean up the house for festival gathering.",
+				"model_output": "### Task Decomposition ###\n   1. Pick_up_earphone_33_from_couch_24\n   2. Place_earphone_33_on_stand_19\n   3. Pick_up_phone_31_from_couch_24\n   4. Place_phone_31_on_stand_19\n   5. Pick_up_clothing_32_from_couch_24\n   6. Place_clothing_32_on_cabinet_43\n   7. Open_fridge_44\n   8. Pick_up_apple_17_from_fridge_44\n   9. Place_apple_17_next_to_bread_34\n   10. Pick_up_coke_62_from_fridge_44\n   11. Place_coke_62_next_to_apple_17\n   12. Close_fridge_44\n   13. Open_cabinet_41\n   14. Pick_up_plate_22_from_cabinet_41\n   15. Place_plate_22_on_table_30\n   16. Pick_up_plate_65_from_cabinet_41\n   17. Place_plate_65_next_to_plate_22\n   18. Close_cabinet_41\n   19. Open_cabinet_37\n   20. Pick_up_glass_50_from_cabinet_37\n   21. Place_glass_50_on_table_30\n   22. Open_cabinet_37\n   23. Pick_up_glass_51_from_cabinet_37\n   24. Place_glass_51_next_to_glass_50\n   25. Pick_up_spoon_41_from_cabinet_37\n   26. Place_spoon_41_on_table_30\n   27. Pick_up_spoon_42_from_cabinet_37\n   28. Place_spoon_42_next_to_spoon_41\n   29. Close_cabinet_37\n   30. Open_cabinet_40\n   31. Pick_up_fork_25_from_cabinet_40\n   32. Place_fork_25_on_table_30\n   33. Open_cabinet_40\n   34. Pick_up_fork_26_from_cabinet_40\n   35. Place_fork_26_next_to_fork_25\n   36. Pick_up_keychain_13_from_bed_23\n   37. Place_keychain_13_on_chest_of_drawers_35\n   38. Pick_up_phone_14_from_bed_23\n   39. Place_phone_14_on_chest_of_drawers_35\n   40. Pick_up_sponge_3_from_cabinet_37\n   41. Clean_bed_23\n\n### Subgoal Grounding ###\n   1. Pick_up_earphone_33_from_couch_24\n      Subtask goal: ['(holding agent_0 earphone_33)']\n      Implicitly related object: []\n   2. Place_earphone_33_on_stand_19\n      Subtask goal: ['(item_on_surface earphone_33 stand_19)']\n      Implicitly related object: []\n   3. Pick_up_phone_31_from_couch_24\n      Subtask goal: ['(holding agent_0 phone_31)']\n      Implicitly related object: []\n   4. Place_phone_31_on_stand_19\n      Subtask goal: ['(item_on_surface phone_31 stand_19)']\n      Implicitly related object: []\n   5. Pick_up_clothing_32_from_couch_24\n      Subtask goal: ['(holding agent_0 clothing_32)']\n      Implicitly related object: []\n   6. Place_clothing_32_on_cabinet_43\n      Subtask goal: ['(item_on_surface clothing_32 cabinet_43)']\n      Implicitly related object: []\n   7. Open_fridge_44\n      Subtask goal: ['(is_open fridge_44)']\n      Implicitly related object: []\n   8. Pick_up_apple_17_from_fridge_44\n      Subtask goal: ['(holding agent_0 apple_17)']\n      Implicitly related object: []\n   9. Place_apple_17_next_to_bread_34\n      Subtask goal: ['(next_to apple_17 bread_34 table_32)']\n      Implicitly related object: []\n   10. Pick_up_coke_62_from_fridge_44\n      Subtask goal: ['(holding agent_0 coke_62)']\n      Implicitly related object: []\n   11. Place_coke_62_next_to_apple_17\n      Subtask goal: ['(next_to coke_62 apple_17 table_32)']\n      Implicitly related object: []\n   12. Close_fridge_44\n      Subtask goal: ['(not (is_open fridge_44))']\n      Implicitly related object: []\n   13. Open_cabinet_41\n      Subtask goal: ['(is_open cabinet_41)']\n      Implicitly related object: []\n   14. Pick_up_plate_22_from_cabinet_41\n      Subtask goal: ['(holding agent_0 plate_22)']\n      Implicitly related object: []\n   15. Place_plate_22_on_table_30\n      Subtask goal: ['(item_on_surface plate_22 table_30)']\n      Implicitly related object: []\n   16. Pick_up_plate_65_from_cabinet_41\n      Subtask goal: ['(holding agent_0 plate_65)']\n      Implicitly related object: []\n   17. Place_plate_65_next_to_plate_22\n      Subtask goal: ['(next_to plate_65 plate_22 table_30)']\n      Implicitly related object: []\n   18. Close_cabinet_41\n      Subtask goal: ['(not (is_open cabinet_41))']\n      Implicitly related object: []\n   19. Open_cabinet_37\n      Subtask goal: ['(is_open cabinet_37)']\n      Implicitly related object: []\n   20. Pick_up_glass_50_from_cabinet_37\n      Subtask goal: ['(holding agent_0 glass_50)']\n      Implicitly related object: []\n   21. Place_glass_50_on_table_30\n      Subtask goal: ['(item_on_surface glass_50 table_30)']\n      Implicitly related object: []\n   22. Open_cabinet_37\n      Subtask goal: ['(is_open cabinet_37)']\n      Implicitly related object: []\n   23. Pick_up_glass_51_from_cabinet_37\n      Subtask goal: ['(holding agent_0 glass_51)']\n      Implicitly related object: []\n   24. Place_glass_51_next_to_glass_50\n      Subtask goal: ['(next_to glass_51 glass_50 table_30)']\n      Implicitly related object: []\n   25. Pick_up_spoon_41_from_cabinet_37\n      Subtask goal: ['(holding agent_0 spoon_41)']\n      Implicitly related object: []\n   26. Place_spoon_41_on_table_30\n      Subtask goal: ['(item_on_surface spoon_41 table_30)']\n      Implicitly related object: []\n   27. Pick_up_spoon_42_from_cabinet_37\n      Subtask goal: ['(holding agent_0 spoon_42)']\n      Implicitly related object: []\n   28. Place_spoon_42_next_to_spoon_41\n      Subtask goal: ['(next_to spoon_42 spoon_41 table_30)']\n      Implicitly related object: []\n   29. Close_cabinet_37\n      Subtask goal: ['(not (is_open cabinet_37))']\n      Implicitly related object: []\n   30. Open_cabinet_40\n      Subtask goal: ['(is_open cabinet_40)']\n      Implicitly related object: []\n   31. Pick_up_fork_25_from_cabinet_40\n      Subtask goal: ['(holding agent_0 fork_25)']\n      Implicitly related object: []\n   32. Place_fork_25_on_table_30\n      Subtask goal: ['(item_on_surface fork_25 table_30)']\n      Implicitly related object: []\n   33. Open_cabinet_40\n      Subtask goal: ['(is_open cabinet_40)']\n      Implicitly related object: []\n   34. Pick_up_fork_26_from_cabinet_40\n      Subtask goal: ['(holding agent_0 fork_26)']\n      Implicitly related object: []\n   35. Place_fork_26_next_to_fork_25\n      Subtask goal: ['(next_to fork_26 fork_25 table_30)']\n      Implicitly related object: []\n   36. Pick_up_keychain_13_from_bed_23\n      Subtask goal: ['(holding agent_0 keychain_13)']\n      Implicitly related object: []\n   37. Place_keychain_13_on_chest_of_drawers_35\n      Subtask goal: ['(item_on_surface keychain_13 chest_of_drawers_35)']\n      Implicitly related object: []\n   38. Pick_up_phone_14_from_bed_23\n      Subtask goal: ['(holding agent_0 phone_14)']\n      Implicitly related object: []\n   39. Place_phone_14_on_chest_of_drawers_35\n      Subtask goal: ['(item_on_surface phone_14 chest_of_drawers_35)']\n      Implicitly related object: []\n   40. Pick_up_sponge_3_from_cabinet_37\n      Subtask goal: ['(holding agent_0 sponge_3)']\n      Implicitly related object: []\n   41. Clean_bed_23\n      Subtask goal: ['(is_clean bed_23)']\n      Implicitly related object: []",
+				"plan": [
+					"(navigate agent_0 couch_24 earphone_33)",
+					"(pick_from_surface agent_0 earphone_33 couch_24)",
+					"(navigate agent_0 couch_24 stand_19)",
+					"(place_on_surface agent_0 earphone_33 stand_19)",
+					"(navigate agent_0 stand_19 phone_31)",
+					"(pick_from_surface agent_0 phone_31 couch_24)",
+					"(navigate agent_0 couch_24 stand_19)",
+					"(place_on_surface agent_0 phone_31 stand_19)",
+					"(navigate agent_0 stand_19 clothing_32)",
+					"(pick_from_surface agent_0 clothing_32 couch_24)",
+					"(navigate agent_0 couch_24 cabinet_43)",
+					"(place_on_surface agent_0 clothing_32 cabinet_43)",
+					"(navigate agent_0 cabinet_43 fridge_44)",
+					"(open agent_0 fridge_44)",
+					"(pick_from_receptacle agent_0 apple_17 fridge_44)",
+					"(navigate agent_0 fridge_44 table_32)",
+					"(place_next_to_surface agent_0 apple_17 bread_34 table_32)",
+					"(navigate agent_0 table_32 fridge_44)",
+					"(pick_from_receptacle agent_0 coke_62 fridge_44)",
+					"(navigate agent_0 fridge_44 table_32)",
+					"(place_next_to_surface agent_0 coke_62 apple_17 table_32)",
+					"(navigate agent_0 table_32 fridge_44)",
+					"(close agent_0 fridge_44)",
+					"(navigate agent_0 fridge_44 cabinet_41)",
+					"(open agent_0 cabinet_41)",
+					"(pick_from_receptacle agent_0 plate_22 cabinet_41)",
+					"(navigate agent_0 cabinet_41 table_30)",
+					"(place_on_surface agent_0 plate_22 table_30)",
+					"(navigate agent_0 table_30 cabinet_41)",
+					"(pick_from_receptacle agent_0 plate_65 cabinet_41)",
+					"(navigate agent_0 cabinet_41 table_30)",
+					"(place_next_to_surface agent_0 plate_65 plate_22 table_30)",
+					"(navigate agent_0 table_30 cabinet_41)",
+					"(close agent_0 cabinet_41)",
+					"(navigate agent_0 cabinet_41 cabinet_37)",
+					"(open agent_0 cabinet_37)",
+					"(pick_from_receptacle agent_0 glass_50 cabinet_37)",
+					"(navigate agent_0 cabinet_37 table_30)",
+					"(place_on_surface agent_0 glass_50 table_30)",
+					"(navigate agent_0 table_30 cabinet_37)",
+					"(open agent_0 cabinet_37)",
+					"(pick_from_receptacle agent_0 glass_51 cabinet_37)",
+					"(navigate agent_0 cabinet_37 table_30)",
+					"(place_next_to_surface agent_0 glass_51 glass_50 table_30)",
+					"(navigate agent_0 table_30 cabinet_37)",
+					"(pick_from_receptacle agent_0 spoon_41 cabinet_37)",
+					"(navigate agent_0 cabinet_37 table_30)",
+					"(place_on_surface agent_0 spoon_41 table_30)",
+					"(navigate agent_0 table_30 cabinet_37)",
+					"(pick_from_receptacle agent_0 spoon_42 cabinet_37)",
+					"(navigate agent_0 cabinet_37 table_30)",
+					"(place_next_to_surface agent_0 spoon_42 spoon_41 table_30)",
+					"(navigate agent_0 table_30 cabinet_37)",
+					"(close agent_0 cabinet_37)",
+					"(navigate agent_0 cabinet_37 cabinet_40)",
+					"(open agent_0 cabinet_40)",
+					"(pick_from_receptacle agent_0 fork_25 cabinet_40)",
+					"(navigate agent_0 cabinet_40 table_30)",
+					"(place_on_surface agent_0 fork_25 table_30)",
+					"(navigate agent_0 table_30 cabinet_40)",
+					"(open agent_0 cabinet_40)",
+					"(pick_from_receptacle agent_0 fork_26 cabinet_40)",
+					"(navigate agent_0 cabinet_40 table_30)",
+					"(place_next_to_surface agent_0 fork_26 fork_25 table_30)",
+					"(navigate agent_0 table_30 keychain_13)",
+					"(pick_from_surface agent_0 keychain_13 bed_23)",
+					"(navigate agent_0 bed_23 chest_of_drawers_35)",
+					"(place_on_surface agent_0 keychain_13 chest_of_drawers_35)",
+					"(navigate agent_0 chest_of_drawers_35 phone_14)",
+					"(pick_from_surface agent_0 phone_14 bed_23)",
+					"(navigate agent_0 bed_23 chest_of_drawers_35)",
+					"(place_on_surface agent_0 phone_14 chest_of_drawers_35)",
+					"(navigate agent_0 chest_of_drawers_35 sponge_3)",
+					"(pick_from_surface agent_0 sponge_3 cabinet_37)",
+					"(navigate agent_0 cabinet_37 bed_23)",
+					"(clean agent_0 bed_23)"
+				],
+				"video_path": "static/videos/habitat_demos/clean_up_the_house_for_festival_gathering.mp4"
+			},
+			{
+				"instruction": "Host an elegant dinner this evening",
+				"model_output": "### Task Decomposition ###\n   1. Pick_plate_22_from_cabinet_41\n   2. Place_plate_22_on_table_30\n   3. Pick_glass_50_from_cabinet_37\n   4. Place_glass_50_next_to_plate_22_on_table_30\n   5. Pick_fork_25_from_cabinet_40\n   6. Place_fork_25_next_to_plate_22_on_table_30\n   7. Pick_cup_23_from_cabinet_40\n   8. Place_cup_23_next_to_plate_22_on_table_30\n\n### Subgoal Grounding ###\n   1. Pick_plate_22_from_cabinet_41\n      Subtask goal: ['(holding agent_0 plate_22)']\n      Implicitly related object: []\n   2. Place_plate_22_on_table_30\n      Subtask goal: ['(item_on_surface plate_22 table_30)']\n      Implicitly related object: []\n   3. Pick_glass_50_from_cabinet_37\n      Subtask goal: ['(holding agent_0 glass_50)']\n      Implicitly related object: []\n   4. Place_glass_50_next_to_plate_22_on_table_30\n      Subtask goal: ['(next_to glass_50 plate_22 table_30)']\n      Implicitly related object: []\n   5. Pick_fork_25_from_cabinet_40\n      Subtask goal: ['(holding agent_0 fork_25)']\n      Implicitly related object: []\n   6. Place_fork_25_next_to_plate_22_on_table_30\n      Subtask goal: ['(next_to fork_25 plate_22 table_30)']\n      Implicitly related object: []\n   7. Pick_cup_23_from_cabinet_40\n      Subtask goal: ['(holding agent_0 cup_23)']\n      Implicitly related object: []\n   8. Place_cup_23_next_to_plate_22_on_table_30\n      Subtask goal: ['(next_to cup_23 plate_22 table_30)']\n      Implicitly related object: []\n",
+				"plan": [
+					"(navigate agent_0 kitchen_1 cabinet_41)",
+					"(open agent_0 cabinet_41)",
+					"(navigate agent_0 cabinet_41 plate_22)",
+					"(pick_from_receptacle agent_0 plate_22 cabinet_41)",
+					"(navigate agent_0 plate_22 table_30)",
+					"(place_on_surface agent_0 plate_22 table_30)",
+					"(navigate agent_0 table_30 cabinet_37)",
+					"(open agent_0 cabinet_37)",
+					"(navigate agent_0 cabinet_37 glass_50)",
+					"(pick_from_receptacle agent_0 glass_50 cabinet_37)",
+					"(navigate agent_0 glass_50 table_30)",
+					"(place_next_to_surface agent_0 glass_50 plate_22 table_30)",
+					"(navigate agent_0 table_30 cabinet_40)",
+					"(open agent_0 cabinet_40)",
+					"(navigate agent_0 cabinet_40 fork_25)",
+					"(pick_from_receptacle agent_0 fork_25 cabinet_40)",
+					"(navigate agent_0 fork_25 table_30)",
+					"(place_next_to_surface agent_0 fork_25 plate_22 table_30)",
+					"(navigate agent_0 table_30 cup_23)",
+					"(pick_from_surface agent_0 cup_23 cabinet_40)",
+					"(navigate agent_0 cup_23 table_30)",
+					"(place_next_to_surface agent_0 cup_23 plate_22 table_30)"
+				],
+				"video_path": "static/videos/habitat_demos/host_an_elegant_dinner_this_evening.mp4"
+			},
+			{
+				"instruction": "Plan and serve a complete evening meal",
+				"model_output": "### Task Decomposition ###\n   1. Pick_apple_17_from_fridge_44\n   2. Place_apple_17_on_table_30\n   3. Pick_bread_34_from_table_32\n   4. Place_bread_34_next_to_apple_17_on_table_30\n   5. Pick_fork_25_from_cabinet_40\n   6. Place_fork_25_next_to_bread_34_on_table_30\n   7. Pick_glass_50_from_cabinet_37\n   8. Place_glass_50_next_to_fork_25_on_table_30\n   9. Pick_cup_23_from_cabinet_40\n   10. Place_cup_23_next_to_glass_50_on_table_30\n\n### Subgoal Grounding ###\n   1. Pick_apple_17_from_fridge_44\n      Subtask goal: ['(holding agent_0 apple_17)']\n      Implicitly related object: []\n   2. Place_apple_17_on_table_30\n      Subtask goal: ['(item_on_surface apple_17 table_30)']\n      Implicitly related object: []\n   3. Pick_bread_34_from_table_32\n      Subtask goal: ['(holding agent_0 bread_34)']\n      Implicitly related object: []\n   4. Place_bread_34_next_to_apple_17_on_table_30\n      Subtask goal: ['(next_to bread_34 apple_17 table_30)']\n      Implicitly related object: []\n   5. Pick_fork_25_from_cabinet_40\n      Subtask goal: ['(holding agent_0 fork_25)']\n      Implicitly related object: []\n   6. Place_fork_25_next_to_bread_34_on_table_30\n      Subtask goal: ['(next_to fork_25 bread_34 table_30)']\n      Implicitly related object: []\n   7. Pick_glass_50_from_cabinet_37\n      Subtask goal: ['(holding agent_0 glass_50)']\n      Implicitly related object: []\n   8. Place_glass_50_next_to_fork_25_on_table_30\n      Subtask goal: ['(next_to glass_50 fork_25 table_30)']\n      Implicitly related object: []\n   9. Pick_cup_23_from_cabinet_40\n      Subtask goal: ['(holding agent_0 cup_23)']\n      Implicitly related object: []\n   10. Place_cup_23_next_to_glass_50_on_table_30\n      Subtask goal: ['(next_to cup_23 glass_50 table_30)']\n      Implicitly related object: []\n",
+				"plan": [
+					"(navigate agent_0 kitchen_1 apple_17)",
+					"(navigate agent_0 apple_17 fridge_44)",
+					"(open agent_0 fridge_44)",
+					"(navigate agent_0 fridge_44 apple_17)",
+					"(pick_from_receptacle agent_0 apple_17 fridge_44)",
+					"(navigate agent_0 apple_17 table_30)",
+					"(place_on_surface agent_0 apple_17 table_30)",
+					"(navigate agent_0 table_30 bread_34)",
+					"(pick_from_surface agent_0 bread_34 table_32)",
+					"(navigate agent_0 bread_34 table_30)",
+					"(place_next_to_surface agent_0 bread_34 apple_17 table_30)",
+					"(navigate agent_0 table_30 cabinet_40)",
+					"(open agent_0 cabinet_40)",
+					"(navigate agent_0 cabinet_40 fork_25)",
+					"(pick_from_receptacle agent_0 fork_25 cabinet_40)",
+					"(navigate agent_0 fork_25 table_30)",
+					"(place_next_to_surface agent_0 fork_25 bread_34 table_30)",
+					"(navigate agent_0 table_30 cabinet_37)",
+					"(open agent_0 cabinet_37)",
+					"(navigate agent_0 cabinet_37 glass_50)",
+					"(pick_from_receptacle agent_0 glass_50 cabinet_37)",
+					"(navigate agent_0 glass_50 table_30)",
+					"(place_next_to_surface agent_0 glass_50 fork_25 table_30)",
+					"(navigate agent_0 table_30 cup_23)",
+					"(pick_from_surface agent_0 cup_23 cabinet_40)",
+					"(navigate agent_0 cup_23 table_30)",
+					"(place_next_to_surface agent_0 cup_23 glass_50 table_30)"
+				],
+				"video_path": "static/videos/habitat_demos/plan_and_serve_a_complete_evening_meal.mp4"
+			},
+			{
+				"instruction": "Prepare the home for guests tonight.",
+				"model_output": "### Task Decomposition ###\n   1. Pick_up_cup_23_from_cabinet_40\n   2. Place_cup_23_on_table_32_in_living_room_1\n   3. Pick_up_bread_34_from_table_32\n   4. Place_bread_34_next_to_cup_23_on_table_32\n   5. Pick_up_fork_25_from_cabinet_40\n   6. Place_fork_25_next_to_bread_34_on_table_32\n   7. Pick_up_glass_50_from_cabinet_37\n   8. Place_glass_50_next_to_fork_25_on_table_32\n\n### Subgoal Grounding ###\n   1. Pick_up_cup_23_from_cabinet_40\n      Subtask goal: ['(holding agent_0 cup_23)']\n      Implicitly related object: []\n   2. Place_cup_23_on_table_32_in_living_room_1\n      Subtask goal: ['(item_on_surface cup_23 table_32)']\n      Implicitly related object: []\n   3. Pick_up_bread_34_from_table_32\n      Subtask goal: ['(holding agent_0 bread_34)']\n      Implicitly related object: []\n   4. Place_bread_34_next_to_cup_23_on_table_32\n      Subtask goal: ['(next_to bread_34 cup_23 table_32)']\n      Implicitly related object: []\n   5. Pick_up_fork_25_from_cabinet_40\n      Subtask goal: ['(holding agent_0 fork_25)']\n      Implicitly related object: []\n   6. Place_fork_25_next_to_bread_34_on_table_32\n      Subtask goal: ['(next_to fork_25 bread_34 table_32)']\n      Implicitly related object: []\n   7. Pick_up_glass_50_from_cabinet_37\n      Subtask goal: ['(holding agent_0 glass_50)']\n      Implicitly related object: []\n   8. Place_glass_50_next_to_fork_25_on_table_32\n      Subtask goal: ['(next_to glass_50 fork_25 table_32)']\n      Implicitly related object: []\n",
+				"plan": [
+					"(navigate agent_0 kitchen_1 cup_23)",
+					"(pick_from_surface agent_0 cup_23 cabinet_40)",
+					"(navigate agent_0 cup_23 table_32)",
+					"(place_on_surface agent_0 cup_23 table_32)",
+					"(navigate agent_0 table_32 bread_34)",
+					"(pick_from_surface agent_0 bread_34 table_32)",
+					"(navigate agent_0 bread_34 table_32)",
+					"(place_next_to_surface agent_0 bread_34 cup_23 table_32)",
+					"(navigate agent_0 table_32 cabinet_40)",
+					"(open agent_0 cabinet_40)",
+					"(navigate agent_0 cabinet_40 fork_25)",
+					"(pick_from_receptacle agent_0 fork_25 cabinet_40)",
+					"(navigate agent_0 fork_25 table_32)",
+					"(place_next_to_surface agent_0 fork_25 bread_34 table_32)",
+					"(navigate agent_0 table_32 cabinet_37)",
+					"(open agent_0 cabinet_37)",
+					"(navigate agent_0 cabinet_37 glass_50)",
+					"(pick_from_receptacle agent_0 glass_50 cabinet_37)",
+					"(navigate agent_0 glass_50 table_32)",
+					"(place_next_to_surface agent_0 glass_50 fork_25 table_32)"
+				],
+				"video_path": "static/videos/habitat_demos/prepare_the_home_for_guests_tonight.mp4"
+			},
+			{
+				"instruction": "Prepare tomorrow\u2019s morning routine station.",
+				"model_output": "### Task Decomposition ###\n   1. Pick_up_cup_23_from_cabinet_40\n   2. Place_cup_23_on_table_31_in_bedroom_1\n   3. Pick_up_alarm_clock_7_from_counter_45\n   4. Place_alarm_clock_7_next_to_cup_23_on_table_31\n   5. Pick_up_keychain_13_from_bed_23_in_bedroom_2\n   6. Place_keychain_13_next_to_alarm_clock_7_on_table_31\n   7. Pick_up_phone_14_from_bed_23_in_bedroom_2\n   8. Place_phone_14_next_to_keychain_13_on_table_31\n\n### Subgoal Grounding ###\n   1. Pick_up_cup_23_from_cabinet_40\n      Subtask goal: ['(holding agent_0 cup_23)']\n      Implicitly related object: []\n   2. Place_cup_23_on_table_31_in_bedroom_1\n      Subtask goal: ['(item_on_surface cup_23 table_31)']\n      Implicitly related object: []\n   3. Pick_up_alarm_clock_7_from_counter_45\n      Subtask goal: ['(holding agent_0 alarm_clock_7)']\n      Implicitly related object: []\n   4. Place_alarm_clock_7_next_to_cup_23_on_table_31\n      Subtask goal: ['(next_to alarm_clock_7 cup_23 table_31)']\n      Implicitly related object: []\n   5. Pick_up_keychain_13_from_bed_23_in_bedroom_2\n      Subtask goal: ['(holding agent_0 keychain_13)']\n      Implicitly related object: []\n   6. Place_keychain_13_next_to_alarm_clock_7_on_table_31\n      Subtask goal: ['(next_to keychain_13 alarm_clock_7 table_31)']\n      Implicitly related object: []\n   7. Pick_up_phone_14_from_bed_23_in_bedroom_2\n      Subtask goal: ['(holding agent_0 phone_14)']\n      Implicitly related object: []\n   8. Place_phone_14_next_to_keychain_13_on_table_31\n      Subtask goal: ['(next_to phone_14 keychain_13 table_31)']\n      Implicitly related object: []\n",
+				"plan": [
+					"(navigate agent_0 kitchen_1 cup_23)",
+					"(pick_from_surface agent_0 cup_23 cabinet_40)",
+					"(navigate agent_0 cup_23 table_31)",
+					"(place_on_surface agent_0 cup_23 table_31)",
+					"(navigate agent_0 table_31 alarm_clock_7)",
+					"(navigate agent_0 alarm_clock_7 counter_45)",
+					"(open agent_0 counter_45)",
+					"(navigate agent_0 counter_45 alarm_clock_7)",
+					"(pick_from_receptacle agent_0 alarm_clock_7 counter_45)",
+					"(navigate agent_0 alarm_clock_7 table_31)",
+					"(place_next_to_surface agent_0 alarm_clock_7 cup_23 table_31)",
+					"(navigate agent_0 table_31 keychain_13)",
+					"(pick_from_surface agent_0 keychain_13 bed_23)",
+					"(navigate agent_0 keychain_13 table_31)",
+					"(place_next_to_surface agent_0 keychain_13 alarm_clock_7 table_31)",
+					"(navigate agent_0 table_31 phone_14)",
+					"(pick_from_surface agent_0 phone_14 bed_23)",
+					"(navigate agent_0 phone_14 table_31)",
+					"(place_next_to_surface agent_0 phone_14 keychain_13 table_31)"
+				],
+				"video_path": "static/videos/habitat_demos/prepare_tomorrows_morning_routine_station.mp4"
+			},
+			{
+				"instruction": "Prepare and serve a light evening refreshment.",
+				"model_output": "### Task Decomposition ###\n   1. Pick_up_glass_51_from_cabinet_37\n   2. Fill_glass_51_with_water_at_sink_101\n   3. Place_glass_51_on_coffee_maker_25\n   4. Power_on_coffee_maker_25\n   5. Pick_up_glass_51_from_coffee_maker_25\n   6. Place_glass_51_on_table_30_in_dining_room_1\n\n### Subgoal Grounding ###\n   1. Pick_up_glass_51_from_cabinet_37\n      Subtask goal: ['(holding agent_0 glass_51)']\n      Implicitly related object: []\n   2. Fill_glass_51_with_water_at_sink_101\n      Subtask goal: ['(is_filled glass_51)']\n      Implicitly related object: ['sink_101']\n   3. Place_glass_51_on_coffee_maker_25\n      Subtask goal: ['(item_on_surface glass_51 coffee_maker_25)']\n      Implicitly related object: []\n   4. Power_on_coffee_maker_25\n      Subtask goal: ['(is_powered_on coffee_maker_25)']\n      Implicitly related object: []\n   5. Pick_up_glass_51_from_coffee_maker_25\n      Subtask goal: ['(holding agent_0 glass_51)']\n      Implicitly related object: []\n   6. Place_glass_51_on_table_30_in_dining_room_1\n      Subtask goal: ['(item_on_surface glass_51 table_30)']\n      Implicitly related object: []\n",
+				"plan": [
+					"(navigate agent_0 kitchen_1 cabinet_37)",
+					"(open agent_0 cabinet_37)",
+					"(navigate agent_0 cabinet_37 glass_51)",
+					"(pick_from_receptacle agent_0 glass_51 cabinet_37)",
+					"(navigate agent_0 glass_51 sink_101)",
+					"(fill_from_faucet agent_0 glass_51 sink_101)",
+					"(navigate agent_0 sink_101 coffee_maker_25)",
+					"(place_on_surface agent_0 glass_51 coffee_maker_25)",
+					"(power_on agent_0 coffee_maker_25)",
+					"(navigate agent_0 coffee_maker_25 glass_51)",
+					"(pick_from_surface agent_0 glass_51 coffee_maker_25)",
+					"(navigate agent_0 glass_51 table_30)",
+					"(place_on_surface agent_0 glass_51 table_30)"
+				],
+				"video_path": "static/videos/habitat_demos/prepare_and_serve_a_light_evening_refreshment.mp4"
+			},
+			{
+				"instruction": "Prepare for an early start tomorrow",
+				"model_output": "### Task Decomposition ###\n   1. Pick_up_clothing_6_from_bed_33\n   2. Place_clothing_6_on_table_31\n   3. Pick_up_alarm_clock_7_from_counter_45\n   4. Place_alarm_clock_7_next_to_clothing_6_on_table_31\n   5. Pick_up_watch_5_from_shower_15\n   6. Place_watch_5_next_to_alarm_clock_7_on_table_31\n   7. Pick_up_keychain_13_from_bed_23\n   8. Place_keychain_13_next_to_watch_5_on_table_31\n\n### Subgoal Grounding ###\n   1. Pick_up_clothing_6_from_bed_33\n      Subtask goal: ['(holding agent_0 clothing_6)']\n      Implicitly related object: []\n   2. Place_clothing_6_on_table_31\n      Subtask goal: ['(item_on_surface clothing_6 table_31)']\n      Implicitly related object: []\n   3. Pick_up_alarm_clock_7_from_counter_45\n      Subtask goal: ['(holding agent_0 alarm_clock_7)']\n      Implicitly related object: []\n   4. Place_alarm_clock_7_next_to_clothing_6_on_table_31\n      Subtask goal: ['(next_to alarm_clock_7 clothing_6 table_31)']\n      Implicitly related object: []\n   5. Pick_up_watch_5_from_shower_15\n      Subtask goal: ['(holding agent_0 watch_5)']\n      Implicitly related object: []\n   6. Place_watch_5_next_to_alarm_clock_7_on_table_31\n      Subtask goal: ['(next_to watch_5 alarm_clock_7 table_31)']\n      Implicitly related object: []\n   7. Pick_up_keychain_13_from_bed_23\n      Subtask goal: ['(holding agent_0 keychain_13)']\n      Implicitly related object: []\n   8. Place_keychain_13_next_to_watch_5_on_table_31\n      Subtask goal: ['(next_to keychain_13 watch_5 table_31)']\n      Implicitly related object: []\n",
+				"plan": [
+					"(navigate agent_0 kitchen_1 clothing_6)",
+					"(pick_from_surface agent_0 clothing_6 bed_33)",
+					"(navigate agent_0 clothing_6 table_31)",
+					"(place_on_surface agent_0 clothing_6 table_31)",
+					"(navigate agent_0 table_31 alarm_clock_7)",
+					"(navigate agent_0 alarm_clock_7 counter_45)",
+					"(open agent_0 counter_45)",
+					"(navigate agent_0 counter_45 alarm_clock_7)",
+					"(pick_from_receptacle agent_0 alarm_clock_7 counter_45)",
+					"(navigate agent_0 alarm_clock_7 table_31)",
+					"(place_next_to_surface agent_0 alarm_clock_7 clothing_6 table_31)",
+					"(navigate agent_0 table_31 watch_5)",
+					"(pick_from_surface agent_0 watch_5 shower_15)",
+					"(navigate agent_0 watch_5 table_31)",
+					"(place_next_to_surface agent_0 watch_5 alarm_clock_7 table_31)",
+					"(navigate agent_0 table_31 keychain_13)",
+					"(pick_from_surface agent_0 keychain_13 bed_23)",
+					"(navigate agent_0 keychain_13 table_31)",
+					"(place_next_to_surface agent_0 keychain_13 watch_5 table_31)"
+				],
+				"video_path": "static/videos/habitat_demos/prepare_for_an_early_start_tomorrow.mp4"
+			},
+			{
+				"instruction": "Welcome a guest with refreshments and entertainment",
+				"model_output": "### Task Decomposition ###\n   1. Pick_up_cup_23_from_cabinet_40\n   2. Fill_cup_23_with_water_at_sink_101\n   3. Place_cup_23_on_coffee_maker_25\n   4. Power_on_coffee_maker_25\n   5. Pick_up_cup_23_from_coffee_maker_25\n   6. Place_cup_23_on_table_32_in_living_room_1\n   7. Pick_up_coke_62_from_fridge_44\n   8. Place_coke_62_next_to_cup_23_on_table_32\n   9. Pick_up_action_figure_8_from_shelves_16\n   10. Place_action_figure_8_next_to_cup_23_on_table_32_for_entertainment\n\n### Subgoal Grounding ###\n   1. Pick_up_cup_23_from_cabinet_40\n      Subtask goal: ['(holding agent_0 cup_23)']\n      Implicitly related object: []\n   2. Fill_cup_23_with_water_at_sink_101\n      Subtask goal: ['(is_filled cup_23)']\n      Implicitly related object: ['sink_101']\n   3. Place_cup_23_on_coffee_maker_25\n      Subtask goal: ['(item_on_surface cup_23 coffee_maker_25)']\n      Implicitly related object: []\n   4. Power_on_coffee_maker_25\n      Subtask goal: ['(is_powered_on coffee_maker_25)']\n      Implicitly related object: []\n   5. Pick_up_cup_23_from_coffee_maker_25\n      Subtask goal: ['(holding agent_0 cup_23)']\n      Implicitly related object: []\n   6. Place_cup_23_on_table_32_in_living_room_1\n      Subtask goal: ['(item_on_surface cup_23 table_32)']\n      Implicitly related object: []\n   7. Pick_up_coke_62_from_fridge_44\n      Subtask goal: ['(holding agent_0 coke_62)']\n      Implicitly related object: []\n   8. Place_coke_62_next_to_cup_23_on_table_32\n      Subtask goal: ['(next_to coke_62 cup_23 table_32)']\n      Implicitly related object: []\n   9. Pick_up_action_figure_8_from_shelves_16\n      Subtask goal: ['(holding agent_0 action_figure_8)']\n      Implicitly related object: []\n   10. Place_action_figure_8_next_to_cup_23_on_table_32_for_entertainment\n      Subtask goal: ['(next_to action_figure_8 cup_23 table_32)']\n      Implicitly related object: []\n",
+				"plan": [
+					"(navigate agent_0 kitchen_1 cup_23)",
+					"(pick_from_surface agent_0 cup_23 cabinet_40)",
+					"(navigate agent_0 cup_23 sink_101)",
+					"(fill_from_faucet agent_0 cup_23 sink_101)",
+					"(navigate agent_0 sink_101 coffee_maker_25)",
+					"(place_on_surface agent_0 cup_23 coffee_maker_25)",
+					"(power_on agent_0 coffee_maker_25)",
+					"(navigate agent_0 coffee_maker_25 cup_23)",
+					"(pick_from_surface agent_0 cup_23 coffee_maker_25)",
+					"(navigate agent_0 cup_23 table_32)",
+					"(place_on_surface agent_0 cup_23 table_32)",
+					"(navigate agent_0 table_32 coke_62)",
+					"(navigate agent_0 coke_62 fridge_44)",
+					"(open agent_0 fridge_44)",
+					"(navigate agent_0 fridge_44 coke_62)",
+					"(pick_from_receptacle agent_0 coke_62 fridge_44)",
+					"(navigate agent_0 coke_62 table_32)",
+					"(place_next_to_surface agent_0 coke_62 cup_23 table_32)",
+					"(navigate agent_0 table_32 action_figure_8)",
+					"(pick_from_surface agent_0 action_figure_8 shelves_16)",
+					"(navigate agent_0 action_figure_8 table_32)",
+					"(place_next_to_surface agent_0 action_figure_8 cup_23 table_32)"
+				],
+				"video_path": "static/videos/habitat_demos/welcome_a_guest_with_refreshments_and_entertainment.mp4"
+			}
+		]
+	},
+	{
+		"simulator": "BEHAVIOR-1K",
+		"scene_graph": {},
+		"data_items": [
+			{
+				"instruction": "Put a apple in the refrigerator",
+				"model_output": "### Task Decomposition ###\n   1. Navigate to kitchen counter\n   2. Pick up apple from counter\n   3. Navigate to refrigerator\n   4. Open refrigerator door\n   5. Place apple on refrigerator shelf\n   6. Close refrigerator door\n\n### Subgoal Grounding ###\n   1. Pick up apple\n      Subtask goal: ['(holding agent apple)']\n   2. Place apple in fridge\n      Subtask goal: ['(inside apple refrigerator)']",
+				"plan": [
+					"(navigate kitchen_counter)",
+					"(pick apple)",
+					"(navigate refrigerator)",
+					"(open refrigerator)",
+					"(place_in apple refrigerator)",
+					"(close refrigerator)"
+				],
+				"video_path": "static/videos/behavior_1k_demos/put_apple_in_fridge.mp4"
+			},
+			{
+				"instruction": "Turn on the lamp",
+				"model_output": "### Task Decomposition ###\n   1. Locate the lamp\n   2. Navigate to lamp location\n   3. Interact with lamp switch\n   4. Lamp turns on\n\n### Subgoal Grounding ###\n   1. Locate lamp\n      Subtask goal: ['(visible lamp)']\n   2. Turn on lamp\n      Subtask goal: ['(is_on lamp)']",
+				"plan": [
+					"(locate lamp)",
+					"(navigate lamp)",
+					"(toggle lamp)",
+					"(verify lamp_on)"
+				],
+				"video_path": "static/videos/behavior_1k_demos/turn_on_lamp.mp4"
+			},
+			{
+				"instruction": "Pour a glass of water",
+				"model_output": "### Task Decomposition ###\n   1. Locate glass and water pitcher\n   2. Pick up glass\n   3. Navigate to water pitcher\n   4. Pour water into glass\n   5. Put glass down safely\n\n### Subgoal Grounding ###\n   1. Pick up glass\n      Subtask goal: ['(holding agent glass)']\n   2. Pour water\n      Subtask goal: ['(contains glass water)']",
+				"plan": [
+					"(pick glass)",
+					"(navigate water_pitcher)",
+					"(pour water glass)",
+					"(place glass)"
+				],
+				"video_path": "static/videos/behavior_1k_demos/pour_water.mp4"
+			}
+		]
+	}
+]

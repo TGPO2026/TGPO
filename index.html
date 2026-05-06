@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="TGPO: Trace-Guided Policy Optimization for Robot Task Planning via Verifiable Subgoal Generation">
+  <meta name="description" content="Open-world language-conditioned task planning is crucial for robots operating in large-scale household environments. While many recent works attempt to address this problem using Large Language Models (LLMs) via prompting or training, a key challenge remains: scalability. Performance often degrades rapidly with increasing environment size, plan length, instruction ambiguity, and constraint complexity. In this work, we propose Any House Any Task (AHAT), a household task planner optimized for long-horizon planning in large environments given abstract human instructions. At its core, AHAT utilizes an LLM trained to map task instructions and textual scene graphs into grounded subgoals defined in the Planning Domain Definition Language (PDDL). These subgoals are subsequently solved to generate feasible and optimal long-horizon plans through explicit symbolic reasoning. To enhance the model's ability to decompose complex and ambiguous intentions, we introduce TGPO, a novel reinforcement learning algorithm that integrates external correction of intermediate reasoning trace into Group Relative Policy Optimization (GRPO). Experiments demonstrate that AHAT achieves significant performance gains over state-of-the-art prompting, planning, and learning methods, particularly in human-style household tasks characterized by brief instructions but requiring complex execution plans.">
+  <meta name="keywords" content="planning, robotics, artificial intelligence, machine learning, long-horizon planning, LLMs, reinforcement learning, symbolic reasoning, PDDL, task decomposition">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Research Project">
+  <meta property="og:title" content="TGPO: Trace-Guided Policy Optimization for Robot Task Planning via Verifiable Subgoal Generation">
+  <meta property="og:description" content="Anonymous research project on household task planning.">
+  <meta property="og:image:alt" content="TGPO Research Project">
+  <meta property="article:section" content="Research">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TGPO: Trace-Guided Policy Optimization for Robot Task Planning">
+  <meta name="twitter:description" content="Anonymous research project on household task planning.">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="TGPO: Trace-Guided Policy Optimization for Robot Task Planning via Verifiable Subgoal Generation">
+  <meta name="citation_publication_date" content="2024">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="referrer" content="no-referrer">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <title>TGPO: Trace-Guided Policy Optimization for Robot Task Planning via Verifiable Subgoal Generation - zhihong liu, yang li, renming huang, cewu lu, panpan cai | Academic Research</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+  <script defer src="static/js/interactive-demo.js"></script>
+  
+  <!-- Structured Data for Academic Papers -->
+  <!-- Structured Data removed for anonymity -->
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">TGPO: Trace-Guided Policy Optimization for Robot Task Planning via Verifiable Subgoal Generation</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Anonymous Authors</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                      <p>
+                        <span class="link-block">
+                          <a class="external-link button is-normal is-rounded is-dark" disabled style="cursor: not-allowed; opacity: 0.6;">
+                            <span class="icon">
+                              <i class="fas fa-file-pdf"></i>
+                            </span>
+                            <span>Paper (Coming Soon)</span>
+                          </a>
+                        </span>
+
+                        <span class="link-block">
+                          <a class="external-link button is-normal is-rounded is-dark" disabled style="cursor: not-allowed; opacity: 0.6;">
+                            <span class="icon">
+                              <i class="fab fa-github"></i>
+                            </span>
+                            <span>Code (Coming Soon)</span>
+                          </a>
+                        </span>
+
+                        <span class="link-block">
+                          <a class="external-link button is-normal is-rounded is-dark" disabled style="cursor: not-allowed; opacity: 0.6;">
+                            <span class="icon">
+                              <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" style="width: 1em; height: 1em; vertical-align: middle;">
+                            </span>
+                            <span>Model & Dataset (Coming Soon)</span>
+                          </a>
+                        </span>
+                      </p>
+                      <p>
+                        <span class="link-block">
+                          <a href="#interactive-demo" class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                              <i class="fas fa-play"></i>
+                            </span>
+                            <span>Demo</span>
+                          </a>
+                        </span>
+
+                        <span class="link-block">
+                          <a href="#experimental-results" class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                              <i class="fas fa-chart-bar"></i>
+                            </span>
+                            <span>Results</span>
+                          </a>
+                        </span>
+                      </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Start Banner-->
+<section class="hero teaser">
+  <div class="container has-text-centered">
+    <div class="hero-body">
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <img src="static/images/TGPO_overview.png" alt="TGPO image" loading="lazy" style="max-width: 100%; height: auto;"/>
+          <h2 class="subtitle has-text-centered">
+            Overview of TGPO. 
+<em>(a) Data Generation</em>: Construction of a long-horizon planning dataset with task decomposition traces and grounded subgoals. 
+<em>(b) Policy Initialization</em>: Supervised fine-tuning (SFT) to initialize a structured generation policy. 
+<em>(c) Trace-Guided Policy Optimization</em>: A reinforcement learning framework that improves structured generation by incorporating external trace correction and constrained sampling, enabling effective learning under sparse and noisy rewards.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Banner -->
+
+<!-- Interactive Demo Section - Part 1: Model Output Only -->
+<section class="hero is-small is-light" id="interactive-demo">
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">Interactive Demo - Model Output</h2>
+      <p class="has-text-centered" style="margin-bottom: 2rem;">
+        Explore AHAT's planning outputs by selecting different scenes and instructions.
+      </p>
+
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <!-- Selection Controls -->
+          <div class="columns" style="margin-bottom: 1.5rem;">
+            <div class="column is-half">
+              <div class="field">
+                <label class="label">Scene Graph</label>
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select id="scene-graph-select-1">
+                      <option value="">-- Select Scene Graph --</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="field">
+                <label class="label">Instruction</label>
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select id="instruction-select-1" disabled>
+                      <option value="">-- Select Instruction --</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scene Graph Row -->
+          <div class="box" style="margin-bottom: 1.5rem;">
+            <h4 class="title is-5">Scene Graph</h4>
+            <div id="demo-scenegraph-container-1" class="demo-scenegraph-panel" style="max-height: 400px; overflow-y: auto;">
+              <p class="has-text-grey-light">Select a scene graph to view the building hierarchy.</p>
+            </div>
+          </div>
+
+          <!-- Model Output and Execution Plan - Side by Side -->
+          <div class="box">
+            <div class="columns">
+              <div class="column is-half">
+                <h4 class="title is-5">Model Output</h4>
+                <div id="demo-output-container-1" style="max-height: 300px; overflow-y: auto;">
+                  <p class="has-text-grey-light">Select a scene graph and instruction to see the output.</p>
+                </div>
+              </div>
+              <div class="column is-half">
+                <h4 class="title is-5">Execution Plan</h4>
+                <div id="demo-plan-container-1" style="max-height: 300px; overflow-y: auto;">
+                  <p class="has-text-grey-light">Plan steps will appear here.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Interactive Demo Section - Part 1 -->
+
+<!-- Interactive Demo Section - Part 2: With Video -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3 has-text-centered">Interactive Demo - Execution Visualization</h2>
+      <p class="has-text-centered" style="margin-bottom: 2rem;">
+        Select an instruction to see the complete planning and execution with video demonstration.
+      </p>
+
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <!-- Simulator and Instruction Selection - Same Row -->
+          <div class="columns" style="margin-bottom: 1.5rem;">
+            <div class="column is-half">
+              <div class="field">
+                <label class="label">Simulator</label>
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select id="simulator-select">
+                      <option value="">-- Select Simulator --</option>
+                      <option value="habitat">Habitat</option>
+                      <option value="behavior-1k">BEHAVIOR-1K</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="column is-half">
+              <div class="field">
+                <label class="label">Instruction</label>
+                <div class="control">
+                  <div class="select is-fullwidth">
+                    <select id="instruction-select-2" disabled>
+                      <option value="">-- Select Instruction --</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Model Output and Execution Plan - Side by Side -->
+          <div class="box" style="margin-bottom: 1.5rem;">
+            <div class="columns">
+              <div class="column is-half">
+                <h4 class="title is-5">Model Output</h4>
+                <div id="demo-output-container-2" style="max-height: 300px; overflow-y: auto;">
+                  <p class="has-text-grey-light">Select an instruction to see the output.</p>
+                </div>
+              </div>
+              <div class="column is-half">
+                <h4 class="title is-5">Execution Plan</h4>
+                <div id="demo-plan-container-2" style="max-height: 300px; overflow-y: auto;">
+                  <p class="has-text-grey-light">Plan steps will appear here.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video - Below -->
+          <div class="box">
+            <h4 class="title is-5">Video Demonstration</h4>
+            <div id="demo-video-container-2">
+              <p class="has-text-grey-light has-text-centered">Video will appear here.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Interactive Demo Section - Part 2 -->
+
+<!-- Paper abstract -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Robot task planning in real-world environments requires mapping abstract natural language instructions to executable action sequences under long horizons and complex constraints. While large language models (LLMs) provide strong commonsense reasoning, they often fail to generate reliable and feasible plans. In contrast, symbolic planners ensure feasibility and optimality but require well-specified goals and cannot directly interpret high-level human intent. We formulate robot task planning as learning to generate \emph{verifiable subgoals} in the Planning Domain Definition Language (PDDL), bridging language understanding and symbolic planning. To address the challenges of sparse and noisy supervision, we propose Trace-Guided Policy Optimization (TGPO), a reinforcement learning framework that improves structured subgoal generation through (i) verifier-grounded rewards, (ii) external correction of intermediate reasoning traces, and (iii) constrained policy updates that incorporate corrected traces into training. We evaluate TGPO on large-scale household planning tasks with long horizons, abstract instructions, and complex constraints. TGPO significantly outperforms prompting-based and reinforcement learning baselines, with the largest gains on abstract tasks. Furthermore, TGPO integrates naturally with symbolic planners and language-conditioned executors, enabling robust long-horizon planning and combinatorial generalization in realistic environments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Highlights Section -->
+<section class="hero is-small highlights-section">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Highlights</h2>
+
+      <div class="columns is-multiline highlights-grid">
+        <div class="column is-half-desktop is-full-mobile">
+          <article class="highlight-card highlight-card-intent">
+            <p class="highlight-eyebrow">Learning-based formulation</p>
+            <h3 class="highlight-title">🎯 Verifiable Subgoal Generation</h3>
+            <p class="highlight-description">We cast long-horizon planning as learning a policy that generates <span class="highlight-inline-keyword">verifiable subgoals</span>, moving beyond <span class="highlight-inline-keyword">prompting-based decomposition</span> to enable structured reasoning with symbolic planners.</p>
+          </article>
+        </div>
+
+        <div class="column is-half-desktop is-full-mobile">
+          <article class="highlight-card highlight-card-tgpo">
+            <p class="highlight-eyebrow">Algorithmic innovation</p>
+            <h3 class="highlight-title">🛠️ Trace-Guided Policy Optimization</h3>
+            <p class="highlight-description">We propose TGPO, a reinforcement learning algorithm that leverages <span class="highlight-inline-keyword">external trace correction</span> to improve structured generation under <span class="highlight-inline-keyword">sparse and noisy rewards</span>.</p>
+          </article>
+        </div>
+
+        <div class="column is-half-desktop is-full-mobile">
+          <article class="highlight-card highlight-card-results">
+            <p class="highlight-eyebrow">Robustness & scalability</p>
+            <h3 class="highlight-title">📈 Scalable Long-Horizon Planning</h3>
+            <p class="highlight-description">TGPO enables <span class="highlight-inline-keyword">robust planning</span> in large-scale environments with long horizons and abstract instructions, <span class="highlight-inline-keyword">significantly outperforming</span> existing methods across multiple benchmarks.</p>
+          </article>
+        </div>
+        <div class="column is-half-desktop is-full-mobile">
+          <article class="highlight-card highlight-card-data">
+            <p class="highlight-eyebrow">Data scale</p>
+            <h3 class="highlight-title">🧩 67.1K Abstract Instructions</h3>
+            <p class="highlight-description">We construct a <span class="highlight-inline-keyword">67.1K-sample dataset</span> of ambiguous human instructions in large scenes to support robust long-horizon trainning.</p>
+            </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Highlights Section -->
+
+
+
+<!-- Key Components Section -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Trace-Guided Policy Optimization</h2>
+
+      <!-- TGPO Algorithm -->
+      <div class="content">
+        <div class="columns is-centered" style="margin-top: 1.5rem;">
+          <div class="column is-four-fifths">
+            <video poster="" autoplay controls muted loop preload="metadata" style="width: 100%; border-radius: 8px;">
+              <source src="static/videos/TGPO.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Key Components Section -->
+
+
+
+
+<!-- Experimental Results -->
+<section class="hero is-small" id="experimental-results">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Experimental Results</h2>
+      
+      <!-- Main Results Table -->
+      <div class="content">
+        <h3 class="title is-4">Main Results</h3>
+        
+        <!-- Figures 1 & 2 - Side by Side -->
+        <div class="columns is-centered">
+          <div class="column is-6">
+            <figure class="image">
+              <img src="static/images/ahat_levels.png" alt="Results on In-distribution Benchmark" loading="lazy" style="max-width: 100%; height: auto;"/>
+              <figcaption class="has-text-centered" style="margin-top: 0.5rem; font-style: italic;">
+                Figure 1: Performance comparison on In-distribution Benchmark under varying complexity.
+              </figcaption>
+            </figure>
+          </div>
+          <div class="column is-6">
+            <figure class="image">
+              <img src="static/images/methods_by_benchmark.png" alt="Results on Out-of-distribution benchmarks" loading="lazy" style="max-width: 100%; height: auto;"/>
+              <figcaption class="has-text-centered" style="margin-top: 0.5rem; font-style: italic;">
+                Figure 2: Performance comparison across Out-of-distribution benchmarks.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ablation Study -->
+      <div class="content" style="margin-top: 2rem;">
+        <h3 class="title is-4">Ablation Study</h3>
+
+        
+        
+        <!-- Figures 3 & 4 - Side by Side -->
+        <div class="columns is-centered">
+          <div class="column is-6">
+            <figure class="image">
+              <img src="static/images/ahat_ablation.png" alt="Ablation study results" loading="lazy" style="max-width: 100%; height: auto;"/>
+              <figcaption class="has-text-centered" style="margin-top: 0.5rem; font-style: italic;">
+                Figure 3: Ablation study results showing the contribution of TGPO.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- Scalability Analysis -->
+      <div class="content" style="margin-top: 2rem;">
+        <h3 class="title is-4">Scalability Analysis</h3>
+        <p class="has-text-justified">
+          We systematically evaluate scalability across four dimensions: environment size, plan length, instruction abstraction, and task constraint complexity. As each dimension increases, we observe that AHAT maintains relatively stable performance, with only marginal degradation. In contrast, baseline methods exhibit significant performance drops as scalability increases. These results demonstrate AHAT’s robustness and effectiveness in handling large-scale environments, long-horizon planning, highly abstract instructions, and complex constraints.
+        </p>
+        
+        <div class="scalability-controls has-text-centered" role="tablist" aria-label="Scalability dimensions">
+          <button class="button is-light scalability-tab is-active" data-scalability-key="scene_graph_size" type="button" role="tab" aria-selected="true">
+            Scene Graph Size
+          </button>
+          <button class="button is-light scalability-tab" data-scalability-key="plan_length" type="button" role="tab" aria-selected="false">
+            Plan Length
+          </button>
+          <button class="button is-light scalability-tab" data-scalability-key="task_abstraction" type="button" role="tab" aria-selected="false">
+            Task Abstraction
+          </button>
+          <button class="button is-light scalability-tab" data-scalability-key="constraint_complexity" type="button" role="tab" aria-selected="false">
+            Constraint Complexity
+          </button>
+        </div>
+
+        <div class="scalability-legend-wrap">
+          <div class="scalability-legend" aria-label="Methods legend">
+            <span class="scalability-legend-item">
+              <span class="scalability-legend-swatch" style="background-color: #E15759;"></span>
+              <span>TGPO</span>
+            </span>
+            <span class="scalability-legend-item">
+              <span class="scalability-legend-swatch" style="background-color: #4E79A7;"></span>
+              <span>E2E-TGPO</span>
+            </span>
+            <span class="scalability-legend-item">
+              <span class="scalability-legend-swatch" style="background-color: #F28E2B;"></span>
+              <span>SayPlan</span>
+            </span>
+            <span class="scalability-legend-item">
+              <span class="scalability-legend-swatch" style="background-color: #76B7B2;"></span>
+              <span>GPT-5</span>
+            </span>
+          </div>
+        </div>
+
+        <div class="columns is-centered scalability-image-row">
+          <div class="column scalability-image-column">
+            <figure class="image scalability-figure">
+              <img id="scalability-image" src="static/images/ablation_scene_graph_size.png" alt="Scalability analysis for scene graph size" loading="lazy"/>
+              <figcaption id="scalability-caption" class="has-text-centered">
+                Scalability analysis under increasing scene graph size.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End experimental results -->
+
+
+
+  <script>
+    // Simulator data management
+    let visualizationData = [];
+    let currentSimulator = 'habitat';
+    let currentSimulatorData = null;
+
+    // Load visualization data from JSON
+    async function loadVisualizationData() {
+      try {
+        const response = await fetch('static/demos/visualization_data.json');
+        if (response.ok) {
+          visualizationData = await response.json();
+          console.log('Visualization data loaded successfully');
+        } else {
+          console.warn('Failed to load visualization_data.json');
+        }
+      } catch (error) {
+        console.error('Error loading visualization data:', error);
+      }
+    }
+
+    // Initialize Execution Visualization Demo (Simulator + Instruction)
+    function initializeDemo2() {
+      const simulatorSelect = document.getElementById('simulator-select');
+      const instructionSelect = document.getElementById('instruction-select-2');
+
+      if (!simulatorSelect || !instructionSelect) {
+        console.error('Demo 2 select elements not found');
+        return;
+      }
+
+      // Add event listeners
+      simulatorSelect.addEventListener('change', onSimulatorChange);
+      instructionSelect.addEventListener('change', onInstructionChange2);
+    }
+
+    // Handle simulator selection change
+    function onSimulatorChange() {
+      const simulatorSelect = document.getElementById('simulator-select');
+      const instructionSelect = document.getElementById('instruction-select-2');
+      const selectedSimulator = simulatorSelect.value;
+
+      // Reset instruction dropdown
+      instructionSelect.innerHTML = '<option value="">-- Select Instruction --</option>';
+      
+      // Clear output
+      clearDemoOutput2();
+
+      if (selectedSimulator === '') {
+        instructionSelect.disabled = true;
+        currentSimulatorData = null;
+        return;
+      }
+
+      // Find the simulator data from visualizationData
+      currentSimulatorData = visualizationData.find(item => {
+        return item.simulator && item.simulator.toLowerCase() === selectedSimulator.toLowerCase();
+      });
+
+      if (!currentSimulatorData) {
+        console.warn('Simulator data not found for:', selectedSimulator);
+        instructionSelect.disabled = true;
+        return;
+      }
+
+      currentSimulator = selectedSimulator;
+      
+      // Enable instruction dropdown
+      instructionSelect.disabled = false;
+
+      // Populate instruction dropdown based on selected simulator
+      if (currentSimulatorData.data_items && currentSimulatorData.data_items.length > 0) {
+        currentSimulatorData.data_items.forEach((item, index) => {
+          const option = document.createElement('option');
+          option.value = index;
+          option.textContent = item.instruction;
+          instructionSelect.appendChild(option);
+        });
+      }
+    }
+
+    // Handle instruction selection change for Demo 2
+    function onInstructionChange2() {
+      const instructionSelect = document.getElementById('instruction-select-2');
+      const instructionIndex = instructionSelect.value;
+
+      if (instructionIndex === '') {
+        clearDemoOutput2();
+        return;
+      }
+
+      updateDemo2Output(instructionIndex);
+    }
+
+    function displaySimulatorOutput(dataItem) {
+      // Display output
+      const outputContainer = document.getElementById('demo-output-container-2');
+      if (dataItem.model_output && dataItem.model_output.trim() !== '') {
+        outputContainer.innerHTML = `<pre class="demo-output-text" style="white-space: pre-wrap; font-family: monospace; font-size: 0.9em;">${escapeHtml(dataItem.model_output)}</pre>`;
+      } else {
+        outputContainer.innerHTML = '<p class="has-text-grey-light">No model output available.</p>';
+      }
+      
+      // Display plan
+      const planContainer = document.getElementById('demo-plan-container-2');
+      if (dataItem.plan && dataItem.plan.length > 0) {
+        let planHtml = '<ol style="margin-left: 1.5em;">';
+        dataItem.plan.forEach((step) => {
+          planHtml += `<li style="margin: 5px 0;"><code>${escapeHtml(step)}</code></li>`;
+        });
+        planHtml += '</ol>';
+        planContainer.innerHTML = planHtml;
+      } else {
+        planContainer.innerHTML = '<p class="has-text-grey-light">No plan available.</p>';
+      }
+      
+      // Display video
+      const videoContainer = document.getElementById('demo-video-container-2');
+      renderDemoVideo2(videoContainer, dataItem);
+    }
+
+    function renderDemoVideo2(container, dataItem) {
+      if (!container) {
+        console.warn('Video container not found');
+        return;
+      }
+
+      const videoPath = dataItem.video_path;
+      const videoUrl = dataItem.video_url;
+      const videoId = dataItem.video_id;
+
+      console.log('renderDemoVideo2 called with:', { videoPath, videoUrl, videoId });
+
+      // Priority 1: Use video_path if available
+      if (videoPath) {
+        // videoPath is already a full relative path like "static/videos/..."
+        const fullPath = videoPath.startsWith('http') ? videoPath : videoPath;
+        console.log('Using video_path:', fullPath);
+        container.innerHTML = `
+          <video controls autoplay muted loop preload="metadata" style="width: 100%; border-radius: 8px;">
+            <source src="${escapeHtml(fullPath)}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        `;
+        return;
+      }
+
+      // Priority 2: Use video_url
+      if (videoUrl) {
+        console.log('Using video_url:', videoUrl);
+        container.innerHTML = `
+          <video controls autoplay muted loop preload="metadata" style="width: 100%; border-radius: 8px;">
+            <source src="${escapeHtml(videoUrl)}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        `;
+        return;
+      }
+
+      // Priority 3: Use video_id
+      if (videoId) {
+        const videoPathFromId = `static/demos/videos/${videoId}.mp4`;
+        console.log('Using video_id, path:', videoPathFromId);
+        container.innerHTML = `
+          <video controls autoplay muted loop preload="metadata" style="width: 100%; border-radius: 8px;">
+            <source src="${escapeHtml(videoPathFromId)}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        `;
+        return;
+      }
+
+      console.warn('No video sources available');
+      container.innerHTML = '<p class="has-text-grey-light has-text-centered">No video available.</p>';
+    }
+
+    function updateDemo2Output(instructionIndex) {
+      const index = parseInt(instructionIndex);
+      
+      if (!currentSimulatorData || !currentSimulatorData.data_items) {
+        console.warn('No simulator data available');
+        return;
+      }
+
+      const dataItem = currentSimulatorData.data_items[index];
+      if (dataItem) {
+        displaySimulatorOutput(dataItem);
+      }
+    }
+
+    function clearDemoOutput2() {
+      const outputContainer = document.getElementById('demo-output-container-2');
+      const planContainer = document.getElementById('demo-plan-container-2');
+      const videoContainer = document.getElementById('demo-video-container-2');
+
+      if (outputContainer) {
+        outputContainer.innerHTML =
+          '<p class="has-text-grey-light">Select an instruction to see the output.</p>';
+      }
+      if (planContainer) {
+        planContainer.innerHTML =
+          '<p class="has-text-grey-light">Plan steps will appear here.</p>';
+      }
+      if (videoContainer) {
+        videoContainer.innerHTML =
+          '<p class="has-text-grey-light has-text-centered">Video will appear here.</p>';
+      }
+    }
+
+    function escapeHtml(text) {
+      const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+      };
+      return text.replace(/[&<>"']/g, (m) => map[m]);
+    }
+
+    // Initialize on page load
+    window.addEventListener('DOMContentLoaded', function() {
+      loadVisualizationData().then(() => {
+        // Initialize demo after data is loaded
+        initializeDemo2();
+        console.log('Page initialized, ready for simulator selection');
+      });
+    });
+  </script>
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
