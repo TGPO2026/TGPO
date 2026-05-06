@@ -1,7 +1,17 @@
 {
-  "planning_domain.pddl": "pddl_domain/planning_domain.pddl",
-  "test_domain.txt": "pddl_domain/test_domain.txt",
-  "easy_task_examples.md": "task_examples/easy_task_examples.md",
-  "test_example.txt": "task_examples/test_example.txt",
-  "training_system_prompt.md": "prompts/training_system_prompt.md"
+  "file_mapping.json": "file_mapping.json",
+  "generate_indexes.py": "generate_indexes.py",
+  "pddl_domain": "pddl_domain",
+  "pddl_domain/planning_domain.pddl": "pddl_domain/planning_domain.pddl",
+  "pddl_domain/test_domain.txt": "pddl_domain/test_domain.txt",
+  "prompts": "prompts",
+  "prompts/rubric_llm_evaluation": "prompts/rubric_llm_evaluation",
+  "prompts/rubric_llm_evaluation/Completeness_prompt.txt": "prompts/rubric_llm_evaluation/Completeness_prompt.txt",
+  "prompts/rubric_llm_evaluation/Execution_Quality_prompt.txt": "prompts/rubric_llm_evaluation/Execution_Quality_prompt.txt",
+  "prompts/rubric_llm_evaluation/Goal_Achievement_prompt.txt": "prompts/rubric_llm_evaluation/Goal_Achievement_prompt.txt",
+  "prompts/rubric_llm_evaluation/Intent_Understanding_prompt.txt": "prompts/rubric_llm_evaluation/Intent_Understanding_prompt.txt",
+  "prompts/training_system_prompt.md": "prompts/training_system_prompt.md",
+  "task_examples": "task_examples",
+  "task_examples/easy_task_examples.md": "task_examples/easy_task_examples.md",
+  "task_examples/test_example.txt": "task_examples/test_example.txt"
 }
