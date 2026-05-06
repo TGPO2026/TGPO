@@ -1,8 +1,9 @@
 // Interactive Demo Component for AHAT Project Page
 
 let demoData = [];
-let visualizationData = [];
 let basePath = "";
+
+// Note: visualizationData is declared in the HTML inline script block
 
 // Load demo data from JSON file
 async function loadDemoData() {
@@ -44,7 +45,7 @@ async function loadDemoData() {
 
     console.log("Demo data loaded successfully");
     initializeDemo1();
-    initializeDemo2();
+    // Demo 2 is initialized in HTML inline script
   } catch (error) {
     console.error("Error loading demo data:", error);
   }
@@ -613,195 +614,12 @@ function renderSceneGraphPanel1(sceneGraph, plan) {
   }
 }
 
-// ========== Demo 2: Fixed Scene with Video ==========
+// ========== Demo 2: Handled in HTML inline script ==========
+// Note: Demo 2 initialization and event handlers are now managed by HTML inline script
 
-// Initialize Demo 2 (fixed scene, instruction only)
-function initializeDemo2() {
-  const instructionSelect = document.getElementById("instruction-select-2");
-
-  if (!instructionSelect) {
-    console.error("Demo 2 select elements not found");
-    return;
-  }
-
-  // Use the first scene graph as the fixed scene
-  if (visualizationData.length === 0) {
-    console.error("No visualization data available for Demo 2");
-    return;
-  }
-
-  const fixedSceneData = visualizationData[0];
-
-  // Populate instruction dropdown
-  instructionSelect.innerHTML =
-    '<option value="">-- Select Instruction --</option>';
-
-  fixedSceneData.data_items.forEach((item, index) => {
-    const option = document.createElement("option");
-    option.value = index;
-    option.textContent = item.instruction;
-    instructionSelect.appendChild(option);
-  });
-
-  // Add event listener
-  instructionSelect.addEventListener("change", onInstructionChange2);
-}
-
-// Handle instruction selection change for Demo 2
-function onInstructionChange2() {
-  const instructionSelect = document.getElementById("instruction-select-2");
-  const instructionIndex = instructionSelect.value;
-
-  if (instructionIndex === "") {
-    clearDemoOutput2();
-    return;
-  }
-
-  // Always use first scene graph
-  const dataItem = visualizationData[0].data_items[instructionIndex];
-  displayDemoOutput2(dataItem);
-}
-
-// Display Demo 2 output (with video)
-function displayDemoOutput2(dataItem) {
-  const outputContainer = document.getElementById("demo-output-container-2");
-  const planContainer = document.getElementById("demo-plan-container-2");
-  const videoContainer = document.getElementById("demo-video-container-2");
-
-  // Display model output
-  if (dataItem.model_output && dataItem.model_output.trim() !== "") {
-    outputContainer.innerHTML = `<pre class="demo-output-text">${escapeHtml(dataItem.model_output)}</pre>`;
-  } else {
-    outputContainer.innerHTML =
-      '<p class="has-text-grey-light">No model output available.</p>';
-  }
-
-  // Display plan steps
-  if (dataItem.plan && dataItem.plan.length > 0) {
-    let planHtml = '<ol class="demo-plan-list">';
-    dataItem.plan.forEach((step) => {
-      planHtml += `<li>${escapeHtml(step)}</li>`;
-    });
-    planHtml += "</ol>";
-    planContainer.innerHTML = planHtml;
-  } else {
-    planContainer.innerHTML =
-      '<p class="has-text-grey-light">No plan available.</p>';
-  }
-
-  renderDemoVideo(videoContainer, dataItem);
-}
-
-// Clear Demo 2 output
-function clearDemoOutput2() {
-  const outputContainer = document.getElementById("demo-output-container-2");
-  const planContainer = document.getElementById("demo-plan-container-2");
-  const videoContainer = document.getElementById("demo-video-container-2");
-
-  if (outputContainer) {
-    outputContainer.innerHTML =
-      '<p class="has-text-grey-light">Select an instruction to see the output.</p>';
-  }
-  if (planContainer) {
-    planContainer.innerHTML =
-      '<p class="has-text-grey-light">Plan steps will appear here.</p>';
-  }
-  if (videoContainer) {
-    videoContainer.innerHTML =
-      '<p class="has-text-grey-light has-text-centered">Video will appear here.</p>';
-  }
-}
-
-function renderDemoVideo(container, dataItem) {
-  if (!container) return;
-
-  const videoPath = dataItem.video_path;
-  const videoUrl = dataItem.video_url;
-  const videoId = dataItem.video_id;
-
-  // Priority 1: Use video_path if available
-  if (videoPath) {
-    const fullPath = videoPath.startsWith("http")
-      ? videoPath
-      : `${basePath}${videoPath}`;
-    container.innerHTML = `
-      <video id="demo-video-2" controls autoplay muted loop preload="metadata" style="width: 100%; border-radius: 8px;">
-        <source src="${escapeHtml(fullPath)}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    `;
-    return;
-  }
-
-  // Priority 2: Use video_url
-  if (videoUrl) {
-    if (isYouTubeUrl(videoUrl)) {
-      const embedUrl = getYouTubeEmbedUrl(videoUrl);
-      if (embedUrl) {
-        container.innerHTML = `
-          <div style="position: relative; width: 100%; padding-top: 56.25%; border-radius: 8px; overflow: hidden;">
-            <iframe
-              src="${escapeHtml(embedUrl)}"
-              title="Demo video"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
-              style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0;">
-            </iframe>
-          </div>
-        `;
-        return;
-      }
-    }
-
-    container.innerHTML = `
-      <video id="demo-video-2" controls autoplay muted loop preload="metadata" style="width: 100%; border-radius: 8px;">
-        <source src="${escapeHtml(videoUrl)}">
-        Your browser does not support the video tag.
-      </video>
-    `;
-    return;
-  }
-
-  // Priority 3: Use video_id
-  if (videoId) {
-    const videoPathFromId = `${basePath}demos/videos/${videoId}.mp4`;
-    container.innerHTML = `
-      <video id="demo-video-2" controls autoplay muted loop preload="metadata" style="width: 100%; border-radius: 8px;">
-        <source src="${escapeHtml(videoPathFromId)}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    `;
-    return;
-  }
-
-  container.innerHTML =
-    '<p class="has-text-grey-light has-text-centered">No video available.</p>';
-}
-
-function isYouTubeUrl(url) {
-  return /(?:youtube\.com|youtu\.be)/i.test(url);
-}
-
-function getYouTubeEmbedUrl(url) {
-  try {
-    const parsedUrl = new URL(url);
-
-    if (parsedUrl.hostname.includes("youtu.be")) {
-      const videoId = parsedUrl.pathname.replace("/", "").trim();
-      return videoId ? `https://www.youtube.com/embed/${videoId}` : null;
-    }
-
-    if (parsedUrl.hostname.includes("youtube.com")) {
-      const videoId = parsedUrl.searchParams.get("v");
-      return videoId ? `https://www.youtube.com/embed/${videoId}` : null;
-    }
-  } catch (error) {
-    return null;
-  }
-
-  return null;
-}
+// The following function is intentionally NOT defined here to avoid conflicts:
+// function initializeDemo2() {
+// }
 
 // ========== Shared Utilities ==========
 
