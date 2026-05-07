@@ -293,7 +293,7 @@ def build_file_mapping(base_dir):
         rel_path = path.relative_to(base_dir).as_posix()
 
         # 用相对路径作为 key，避免不同目录下同名文件互相覆盖
-        mapping[rel_path] = rel_path
+        mapping[rel_path] = f"https://tgpo2026.github.io/TGPO/appendix_materials/{rel_path}"
 
     return mapping
 
