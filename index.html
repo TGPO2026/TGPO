@@ -136,7 +136,7 @@
                       </p>
                       <p>
                         <span class="link-block">
-                          <a href="#interactive-demo" class="external-link button is-normal is-rounded is-dark">
+                          <a href="#performance-demo" class="external-link button is-normal is-rounded is-dark">
                             <span class="icon">
                               <i class="fas fa-play"></i>
                             </span>
@@ -192,10 +192,27 @@
 </section>
 <!-- End Banner -->
 
-<!-- Interactive Demo Section - Part 1: Model Output Only -->
-<section class="hero is-small is-light" id="interactive-demo">
+<!-- System Demonstration in BEHAVIOR-1K -->
+<section class="hero is-small" id="performance-demo">
   <div class="hero-body">
-    <div class="container is-max-widescreen">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">System Demonstration in BEHAVIOR-1K</h2>
+      <p class="has-text-justified" style="margin-bottom: 1rem;">
+        We demonstrate the robust performance of TGPO in seamlessly integrating task planning with execution. The accompanying video showcases the task "Preparing popcorn for a radio evening" within the BEHAVIOR-1K simulator.
+      </p>
+      <div id="performance-video-container">
+        <video poster="" autoplay controls muted loop preload="metadata" style="width: 100%; border-radius: 8px;">
+          <source src="static/videos/behavior_1k_demos/recombine_task_demo.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Interactive Demo Section - Part 1: Model Output Only -->
+<section class="hero is-small" id="interactive-demo">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Interactive Demo - Model Output</h2>
       <p class="has-text-centered" style="margin-bottom: 2rem;">
         Explore AHAT's planning outputs by selecting different scenes and instructions.
@@ -266,31 +283,17 @@
 <!-- Interactive Demo Section - Part 2: With Video -->
 <section class="hero is-small">
   <div class="hero-body">
-    <div class="container is-max-widescreen">
-      <h2 class="title is-3 has-text-centered">Interactive Demo - Execution Visualization</h2>
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Interactive Demo - Habitat Execution Visualization</h2>
       <p class="has-text-centered" style="margin-bottom: 2rem;">
         Select an instruction to see the complete planning and execution with video demonstration.
       </p>
 
       <div class="columns is-centered">
         <div class="column is-full">
-          <!-- Simulator and Instruction Selection - Same Row -->
+          <!-- Instruction Selection -->
           <div class="columns" style="margin-bottom: 1.5rem;">
-            <div class="column is-half">
-              <div class="field">
-                <label class="label">Simulator</label>
-                <div class="control">
-                  <div class="select is-fullwidth">
-                    <select id="simulator-select">
-                      <option value="">-- Select Simulator --</option>
-                      <option value="habitat">Habitat</option>
-                      <option value="behavior-1k">BEHAVIOR-1K</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="column is-half">
+            <div class="column is-half is-offset-one-quarter">
               <div class="field">
                 <label class="label">Instruction</label>
                 <div class="control">
@@ -329,6 +332,7 @@
               <p class="has-text-grey-light has-text-centered">Video will appear here.</p>
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -340,7 +344,7 @@
 <section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
@@ -408,7 +412,7 @@
       <!-- TGPO Algorithm -->
       <div class="content">
         <div class="columns is-centered" style="margin-top: 1.5rem;">
-          <div class="column is-four-fifths">
+          <div class="column is-full">
             <video poster="" autoplay controls muted loop preload="metadata" style="width: 100%; border-radius: 8px;">
               <source src="static/videos/TGPO.mp4" type="video/mp4">
             </video>
@@ -520,6 +524,7 @@
           </div>
         </div>
       </div>
+      
     </div>
   </div>
 </section>
@@ -546,26 +551,25 @@
       }
     }
 
-    // Initialize Execution Visualization Demo (Simulator + Instruction)
+    // Initialize Execution Visualization Demo (Habitat only)
     function initializeDemo2() {
-      const simulatorSelect = document.getElementById('simulator-select');
       const instructionSelect = document.getElementById('instruction-select-2');
 
-      if (!simulatorSelect || !instructionSelect) {
+      if (!instructionSelect) {
         console.error('Demo 2 select elements not found');
         return;
       }
 
       // Add event listeners
-      simulatorSelect.addEventListener('change', onSimulatorChange);
       instructionSelect.addEventListener('change', onInstructionChange2);
+
+      // Default to Habitat data
+      onSimulatorChange('habitat');
     }
 
     // Handle simulator selection change
-    function onSimulatorChange() {
-      const simulatorSelect = document.getElementById('simulator-select');
+    function onSimulatorChange(selectedSimulator) {
       const instructionSelect = document.getElementById('instruction-select-2');
-      const selectedSimulator = simulatorSelect.value;
 
       // Reset instruction dropdown
       instructionSelect.innerHTML = '<option value="">-- Select Instruction --</option>';
@@ -573,7 +577,7 @@
       // Clear output
       clearDemoOutput2();
 
-      if (selectedSimulator === '') {
+      if (!selectedSimulator) {
         instructionSelect.disabled = true;
         currentSimulatorData = null;
         return;

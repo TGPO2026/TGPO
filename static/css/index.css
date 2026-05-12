@@ -347,7 +347,7 @@ body {
 
 /* Highlights Section */
 .highlights-section {
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  background: var(--background-primary);
 }
 
 .highlights-grid {
