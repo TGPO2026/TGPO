@@ -6,7 +6,7 @@
   
   <!-- Primary Meta Tags -->
   <meta name="title" content="TGPO: Trace-Guided Policy Optimization for Robot Task Planning via Verifiable Subgoal Generation">
-  <meta name="description" content="Open-world language-conditioned task planning is crucial for robots operating in large-scale household environments. While many recent works attempt to address this problem using Large Language Models (LLMs) via prompting or training, a key challenge remains: scalability. Performance often degrades rapidly with increasing environment size, plan length, instruction ambiguity, and constraint complexity. In this work, we propose Any House Any Task (AHAT), a household task planner optimized for long-horizon planning in large environments given abstract human instructions. At its core, AHAT utilizes an LLM trained to map task instructions and textual scene graphs into grounded subgoals defined in the Planning Domain Definition Language (PDDL). These subgoals are subsequently solved to generate feasible and optimal long-horizon plans through explicit symbolic reasoning. To enhance the model's ability to decompose complex and ambiguous intentions, we introduce TGPO, a novel reinforcement learning algorithm that integrates external correction of intermediate reasoning trace into Group Relative Policy Optimization (GRPO). Experiments demonstrate that AHAT achieves significant performance gains over state-of-the-art prompting, planning, and learning methods, particularly in human-style household tasks characterized by brief instructions but requiring complex execution plans.">
+  <meta name="description" content="">
   <meta name="keywords" content="planning, robotics, artificial intelligence, machine learning, long-horizon planning, LLMs, reinforcement learning, symbolic reasoning, PDDL, task decomposition">
   <meta name="robots" content="noindex, nofollow">
   <meta name="language" content="English">
@@ -215,7 +215,7 @@
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Interactive Demo - Model Output</h2>
       <p class="has-text-centered" style="margin-bottom: 2rem;">
-        Explore AHAT's planning outputs by selecting different scenes and instructions.
+        Explore TGPO's planning outputs by selecting different scenes and instructions.
       </p>
 
       <div class="columns is-centered">
@@ -435,7 +435,7 @@
       
       <!-- Main Results Table -->
       <div class="content">
-        <h3 class="title is-4">Main Results</h3>
+        <h3 class="title is-4">Performance Comparison with Prompting-Based Planners</h3>
         
         <!-- Figures 1 & 2 - Side by Side -->
         <div class="columns is-centered">
@@ -452,7 +452,7 @@
 
       <!-- Ablation Study -->
       <div class="content" style="margin-top: 2rem;">
-        <h3 class="title is-4">Ablation Study</h3>
+        <h3 class="title is-4">Performance Comparison with Learning-Based Planners</h3>
 
         
         
@@ -474,7 +474,7 @@
       <div class="content" style="margin-top: 2rem;">
         <h3 class="title is-4">Scalability Analysis</h3>
         <p class="has-text-justified">
-          We systematically evaluate scalability across four dimensions: environment size, plan length, instruction abstraction, and task constraint complexity. As each dimension increases, we observe that AHAT maintains relatively stable performance, with only marginal degradation. In contrast, baseline methods exhibit significant performance drops as scalability increases. These results demonstrate AHAT’s robustness and effectiveness in handling large-scale environments, long-horizon planning, highly abstract instructions, and complex constraints.
+          We systematically evaluate scalability across four dimensions: environment size, plan length, instruction abstraction, and task constraint complexity. As each dimension increases, we observe that TGPO maintains relatively stable performance, with only marginal degradation. In contrast, baseline methods exhibit significant performance drops as scalability increases. These results demonstrate TGPO’s robustness and effectiveness in handling large-scale environments, long-horizon planning, highly abstract instructions, and complex constraints.
         </p>
         
         <div class="scalability-controls has-text-centered" role="tablist" aria-label="Scalability dimensions">
