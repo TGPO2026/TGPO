@@ -1,5 +1,3 @@
-// Interactive Demo Component for AHAT Project Page
-
 let demoData = [];
 let basePath = "";
 
