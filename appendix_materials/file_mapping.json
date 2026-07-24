@@ -16,6 +16,7 @@
   "prompts/training_prompts": "https://tgpo2026.github.io/TGPO/appendix_materials/prompts/training_prompts",
   "prompts/training_prompts/Task_completion_reviewer_prompt.md": "https://tgpo2026.github.io/TGPO/appendix_materials/prompts/training_prompts/Task_completion_reviewer_prompt.md",
   "prompts/training_prompts/Trace_Improver_prompt.md": "https://tgpo2026.github.io/TGPO/appendix_materials/prompts/training_prompts/Trace_Improver_prompt.md",
+  "prompts/training_prompts/Trainning_prompt.md": "https://tgpo2026.github.io/TGPO/appendix_materials/prompts/training_prompts/Trainning_prompt.md",
   "task_examples": "https://tgpo2026.github.io/TGPO/appendix_materials/task_examples",
   "task_examples/Abstract_task_example.md": "https://tgpo2026.github.io/TGPO/appendix_materials/task_examples/Abstract_task_example.md",
   "task_examples/Complex_task_example.md": "https://tgpo2026.github.io/TGPO/appendix_materials/task_examples/Complex_task_example.md",
