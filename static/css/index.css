@@ -155,6 +155,32 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.publication-affiliations {
+  display: grid;
+  gap: 0.25rem;
+  max-width: 50rem;
+  margin: 0 auto;
+  color: var(--text-secondary);
+}
+
+.publication-affiliations .affiliation-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.25rem 1.5rem;
+}
+
+.publication-affiliations .author-block {
+  margin-right: 0;
+}
+
+.publication-author-notes {
+  margin-top: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
 .publication-venue {
   color: var(--text-secondary);
   width: fit-content;
