@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tgpo2026.github.io/TGPO/sitemap.xml

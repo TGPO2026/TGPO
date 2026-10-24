@@ -45,6 +45,112 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.news-section {
+  position: relative;
+  margin: 1.5rem 0 2.5rem;
+  padding: 2.25rem 1.5rem 2.5rem;
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.news-section::after {
+  display: none;
+}
+
+.news-section .title {
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.news-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 0 auto 1.5rem;
+  max-width: 920px;
+}
+
+.news-heading > span {
+  color: #64748b;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.news-card {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #dbe3ef;
+}
+
+.news-item-featured {
+  padding-top: 0;
+  padding-bottom: 1.5rem;
+}
+
+.news-label {
+  color: #64748b;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.news-item-featured .news-label {
+  color: var(--primary-color);
+}
+
+.news-item h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 1.35rem;
+}
+
+.news-item p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+@media screen and (max-width: 768px) {
+  .news-section {
+    margin-top: 1rem;
+    padding: 1.75rem 1rem 2rem;
+  }
+
+  .news-card {
+    padding: 0;
+  }
+
+  .news-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .news-item {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}
+
+.button[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+}
+
 /* Modern Button Styles */
 .button {
   border-radius: var(--border-radius) !important;
@@ -182,14 +288,16 @@ body {
 }
 
 .publication-venue {
-  color: var(--text-secondary);
+  color: #7c2d12;
   width: fit-content;
-  font-weight: 600;
-  background: var(--background-accent);
-  padding: 0.5rem 1rem;
-  border-radius: var(--border-radius);
+  font-weight: 800;
+  background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 48%, #fecdd3 100%);
+  border: 1px solid #fb923c;
+  padding: 0.6rem 1.15rem;
+  border-radius: 999px;
   margin-top: 1rem;
   display: inline-block;
+  box-shadow: 0 5px 16px rgb(249 115 22 / 0.22);
 }
 
 .publication-awards {
